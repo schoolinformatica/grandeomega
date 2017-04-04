@@ -8,5 +8,6 @@ sudo apt-get install dotnet-dev-1.0.1
 
 repoFolder="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $repoFolder
-
-echo $repoFolder
+dotnet restore
+dotnet build
+dotnet run
