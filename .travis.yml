@@ -7,4 +7,5 @@ matrix:
       sudo: required
 
 script:
+  - chmod +x build.sh 
   - ./build.sh
