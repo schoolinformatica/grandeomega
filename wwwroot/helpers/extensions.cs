@@ -1,6 +1,6 @@
 using System;
 
-namespace kmeans
+namespace Helpers
 {
     public static class Extensions
     {
@@ -9,6 +9,5 @@ namespace kmeans
             for (var i = 0; i < count; i++)
                 action();
         }
-
     }
 }

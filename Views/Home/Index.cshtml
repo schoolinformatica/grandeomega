@@ -1,122 +1,25 @@
-@using YamlParser;
-@using System;
-@using System.Collections.Generic;
-@using kmeans;
-@using System.IO;
 @using System.Linq;
+@using Clustering
+@using Data
+@using models
 
 @{
     ViewData["Title"] = "Home Page";
 }
 
-<!--<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
-    <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-        <li data-target="#myCarousel" data-slide-to="3"></li>
-    </ol>
-    <div class="carousel-inner" role="listbox">
-        <div class="item active">
-            <img src="~/images/banner1.svg" alt="ASP.NET" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-                <p>
-                    Learn how to build ASP.NET apps that can run anywhere.
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525028&clcid=0x409">
-                        Learn More
-                    </a>
-                </p>
-            </div>
-        </div>
-        <div class="item">
-            <img src="~/images/banner2.svg" alt="Visual Studio" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-                <p>
-                    There are powerful new features in Visual Studio for building modern web apps.
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525030&clcid=0x409">
-                        Learn More
-                    </a>
-                </p>
-            </div>
-        </div>
-        <div class="item">
-            <img src="~/images/banner3.svg" alt="Package Management" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-                <p>
-                    Bring in libraries from NuGet, Bower, and npm, and automate tasks using Grunt or Gulp.
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525029&clcid=0x409">
-                        Learn More
-                    </a>
-                </p>
-            </div>
-        </div>
-        <div class="item">
-            <img src="~/images/banner4.svg" alt="Microsoft Azure" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-                <p>
-                    Learn how Microsoft's Azure cloud platform allows you to build, deploy, and scale web apps.
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525027&clcid=0x409">
-                        Learn More
-                    </a>
-                </p>
-            </div>
-        </div>
-    </div>
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-</div>-->
-
 @{
-    <!--private const string WatchDir = Url.Content("/home/steven/Documents/tempproject/dbdump/");-->
-    var WatchDir = "wwwroot/dbdump";
-    var files = Directory.GetFiles(WatchDir);
-    var parser = new Parser();
-    //var data = parser.Parse("data.yaml");
-    var data = new List<Dictionary<string, string>>();
-    foreach(var file in files) {
-        data.AddRange(parser.Parse(file));
-    }
-    var grades = parser.Parse("wwwroot/grades.yaml");
-    // var attempts = DataMapper.ToAttempts(data);
-
-    foreach(var attempt in data) {
-        foreach(var grade in grades) {            
-            double i;
-            if(attempt["student_id"].Equals(grade["student_id"]) && Double.TryParse(grade["grade"], out i)) {
-                attempt["grade"] = grade["grade"];
-            }
-        }
+    var ctx = Students.students.Where(x => x.Grade > 0);
+    foreach (var student in ctx)
+    {
+        student.Filter();
     }
 
-    var students = data.GroupBy(x => x["student_id"]);
+    var data = new DataSet(ctx.Select(x => x.ToGenericVector()).ToList());
 
-    string result = "[";
-    foreach(var student in students) {
-        Console.WriteLine(student.First()["utc"].Substring(student.First()["utc"].IndexOf('-') - 4));
-       var date = DateTime.Parse(student.First()["utc"].Substring(student.First()["utc"].IndexOf('-') - 4));
-        if(student.First().ContainsKey("grade")) {
-            var suc = 0.0;
-                var fail = 0.0;
-                foreach (var attempt in student)
-                {                    
-                    if (attempt["sort"] == "success") {
-                        suc++;
-                    }
-                    else {
-                        fail++;
-                    }
-                }
-        result += "[" + fail + "," +student.First()["grade"]  + "],";
-        }
-    }
-    result += "]";
-
+    var k = new Kmeans(4, 100, data);
+    k.Run();
+    k.PrintClusters();
+//    data = new DataSet(new List<GenericVector>(k.DataSet.Where(x => x.Cluster == 1).ToList()));
 }
 
 <div class="row">
@@ -124,7 +27,7 @@
     <div id="container" style="min-width: 310px; height: 400px; max-width: 800px; margin: 0 auto"></div>
     <div id="container2" style="min-width: 310px; height: 400px; max-width: 800px; margin: 0 auto"></div>
     
-            <script src="~/lib/highcharts/highcharts.js"></script>
+   <script src="~/lib/highcharts/highcharts.js"></script>
 
    <script>
        Highcharts.chart('container', {
@@ -186,12 +89,30 @@
             }
         }
     },
-    series: [{
-        name: 'Student',
-        color: 'rgba(223, 83, 83, .5)',
-        data: @Html.Raw(result)
-
-    }]
+    series: [
+        {
+        type: 'line',
+        name: 'Regression Line',
+        data: [[0, 1.11], [2000, 75]],
+        marker: {
+            enabled: false
+        },
+        states: {
+            hover: {
+                lineWidth: 0
+            }
+        },
+        enableMouseTracking: false
+    },{
+        type: 'scatter',
+        name: 'Grade per attempts',
+        data: @Html.Raw(data.ToString()),
+        marker: {
+            radius: 4
+        }
+        
+    }
+    ]
 });
 
    </script>

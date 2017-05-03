@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
+using startup;
 
 namespace WebApplication
 {
@@ -11,6 +12,7 @@ namespace WebApplication
     {
         public static void Main(string[] args)
         {
+            OnStartUp.Init();
             var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
