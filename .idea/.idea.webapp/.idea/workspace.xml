@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68ce3d5b-6b8d-4992-93e0-e03064b5ad58" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program.cs" afterPath="$PROJECT_DIR$/Program.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/Home/Index.cshtml" afterPath="$PROJECT_DIR$/Views/Home/Index.cshtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" afterPath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wwwroot/helpers/DataMapper.cs" afterPath="$PROJECT_DIR$/wwwroot/helpers/DataMapper.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wwwroot/helpers/Yamlparser.cs" afterPath="$PROJECT_DIR$/wwwroot/helpers/Yamlparser.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wwwroot/helpers/extensions.cs" afterPath="$PROJECT_DIR$/wwwroot/helpers/extensions.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wwwroot/helpers/filewatcher.cs" afterPath="$PROJECT_DIR$/wwwroot/helpers/filewatcher.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wwwroot/helpers/genericvector.cs" afterPath="$PROJECT_DIR$/wwwroot/helpers/genericvector.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wwwroot/helpers/kmeans.cs" afterPath="$PROJECT_DIR$/wwwroot/helpers/kmeans.cs" />
-    </list>
+    <list default="true" id="68ce3d5b-6b8d-4992-93e0-e03064b5ad58" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,11 +12,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="KGenericVector.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="KGenericVector.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wwwroot/helpers/KGenericVector.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="76" lean-forward="false" selection-start-line="14" selection-start-column="76" selection-end-line="14" selection-end-column="76" />
+            <state relative-caret-position="600">
+              <caret line="40" column="1" lean-forward="true" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
               <folding>
                 <marker date="1493194293693" expanded="true" signature="6:40" ph="..." />
                 <marker date="1493194293693" expanded="true" signature="62:930" ph="{...}" />
@@ -38,11 +28,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Correlation.cs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Correlation.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wwwroot/helpers/Correlation.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="56">
-              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="60">
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding>
                 <marker date="1493802851335" expanded="true" signature="6:78" ph="..." />
                 <marker date="1493802851335" expanded="true" signature="100:5079" ph="{...}" />
@@ -272,6 +262,10 @@
               <option name="myItemId" value="webapp (1 project)" />
               <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
         <option name="show-file-system" value="false" />
@@ -281,6 +275,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="ReadonlyStatusHandler">
+    <option name="SHOW_DIALOG" value="false" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -385,12 +382,12 @@
       <workItem from="1493133008294" duration="3191000" />
       <workItem from="1493193392915" duration="7195000" />
       <workItem from="1493369265645" duration="5126000" />
-      <workItem from="1493740129008" duration="8750000" />
+      <workItem from="1493740129008" duration="9195000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27147000" />
+    <option name="totallyTimeSpent" value="27592000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -403,7 +400,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="32" width="1926" height="1051" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -414,7 +410,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Change Signature" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1096,10 +1092,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/wwwroot/helpers/KGenericVector.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="40" column="1" lean-forward="true" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
+          <folding>
+            <marker date="1493194293693" expanded="true" signature="6:40" ph="..." />
+            <marker date="1493194293693" expanded="true" signature="62:930" ph="{...}" />
+            <marker date="1493194293693" expanded="true" signature="112:928" ph="{...}" />
+            <marker date="1493194293693" expanded="true" signature="439:739" ph="{...}" />
+            <marker date="1493194293693" expanded="true" signature="794:921" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/wwwroot/helpers/Correlation.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
             <marker date="1493802851335" expanded="true" signature="6:78" ph="..." />
             <marker date="1493802851335" expanded="true" signature="100:5079" ph="{...}" />
@@ -1119,20 +1129,6 @@
             <marker date="1493802851335" expanded="true" signature="4366:4575" ph="{...}" />
             <marker date="1493802851335" expanded="true" signature="4742:4938" ph="{...}" />
             <marker date="1493802851335" expanded="true" signature="5001:5071" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wwwroot/helpers/KGenericVector.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="76" lean-forward="false" selection-start-line="14" selection-start-column="76" selection-end-line="14" selection-end-column="76" />
-          <folding>
-            <marker date="1493194293693" expanded="true" signature="6:40" ph="..." />
-            <marker date="1493194293693" expanded="true" signature="62:930" ph="{...}" />
-            <marker date="1493194293693" expanded="true" signature="112:928" ph="{...}" />
-            <marker date="1493194293693" expanded="true" signature="439:739" ph="{...}" />
-            <marker date="1493194293693" expanded="true" signature="794:921" ph="{...}" />
           </folding>
         </state>
       </provider>
