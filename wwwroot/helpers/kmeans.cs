@@ -14,46 +14,45 @@ namespace Clustering
 
         //PROPERTIES
 
-        public List<KGenericVector> DataSet { get; set; }
-
-        private int Clusters { get; }
-        private int Iterations { get; }
-        private Dictionary<int, KGenericVector> Centroids { get; set; }
+        private readonly int _clusters;
+        private readonly int _iterations;
+        private readonly List<KGenericVector> _dataSet;
+        private Dictionary<int, KGenericVector> _centroids;
 
 
         //CONSTRUCTORS
         public Kmeans(int k, int iterations, DataSet dataSet)
         {
-            Clusters = k;
-            Iterations = iterations;
-            DataSet = dataSet.Select(x => new KGenericVector(x)).ToList();
+            _clusters = k;
+            _iterations = iterations;
+            _dataSet = dataSet.Select(x => new KGenericVector(x)).ToList();
         }
 
 
         //METHODS
         public void Run()
         {
-            Centroids = GenerateRandomCentroids(Clusters);
+            _centroids = GenerateRandomCentroids(_clusters);
 
-            for (var i = 0; i < Iterations; i++)
+            for (var i = 0; i < _iterations; i++)
             {
-                var oldClusterValues = DataSet.Select(point => point.Cluster).ToList();
+                var oldClusterValues = _dataSet.Select(point => point.Cluster).ToList();
                 RecalculateClusters();
-                if (!IsChangedCluster(oldClusterValues, DataSet.Select(p => p.Cluster).ToList()))
+                if (!IsChangedCluster(oldClusterValues, _dataSet.Select(p => p.Cluster).ToList()))
                     break;
             }
         }
 
         public double GetSquaredErrors()
         {
-            return DataSet
-                .Select(x => Math.Pow(GenericVector.Distance(x, Centroids[x.Cluster]), 2))
+            return _dataSet
+                .Select(x => Math.Pow(GenericVector.Distance(x, _centroids[(int) x.Cluster]), 2))
                 .Sum();
         }
 
         public void PrintClusters()
         {
-            var clusters = DataSet.GroupBy(x => x.Cluster);
+            var clusters = _dataSet.GroupBy(x => x.Cluster);
             foreach (var cluster in clusters)
             {
                 Console.WriteLine("Cluster: " + cluster.ElementAt(0).Cluster);
@@ -64,15 +63,15 @@ namespace Clustering
 
         private void RecalculateClusters()
         {
-            DataSet.ForEach(vector => vector.Cluster = GetNearestCluster(vector));
+            _dataSet.ForEach(vector => vector.Cluster = GetNearestCluster(vector));
 
-            foreach (var key in Centroids.Keys.ToList())
+            foreach (var key in _centroids.Keys.ToList())
             {
-                var cluster = DataSet.Where(v => v.Cluster == key);
+                var cluster = _dataSet.Where(v => v.Cluster == key);
                 if (cluster.Any())
                 {
-                    Centroids[key] = cluster
-                        .Aggregate(new KGenericVector(DataSet.First().Size), (x, y) => x.Sum(y))
+                    _centroids[key] = cluster
+                        .Aggregate(new KGenericVector(_dataSet.First().Size), (x, y) => x.Sum(y))
                         .Devide(cluster.Count());
                 }
             }
@@ -80,7 +79,7 @@ namespace Clustering
 
         private int GetNearestCluster(GenericVector v)
         {
-            return Centroids
+            return _centroids
                 .OrderBy(centroid => GenericVector.Distance(centroid.Value, v))
                 .Select(centroid => centroid.Key)
                 .First();
@@ -97,11 +96,11 @@ namespace Clustering
 
         private KGenericVector GetRandomVector()
         {
-            return DataSet.ElementAt(_random.Next(DataSet.Count));
+            return _dataSet.ElementAt(_random.Next(_dataSet.Count));
         }
 
 
-        private static bool IsChangedCluster(IEnumerable<int> a, IReadOnlyList<int> b)
+        private static bool IsChangedCluster(List<int?> a, List<int?> b)
         {
             return a.Where((t, i) => t != b[i]).Any();
         }

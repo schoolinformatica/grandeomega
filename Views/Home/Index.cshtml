@@ -16,6 +16,16 @@
 
     var data = new DataSet(ctx.Select(x => x.ToGenericVector()).ToList());
 
+    var d = new Dbscan(50, 3, data);
+    d.Run();
+
+    foreach (var cluster in d.DataClusters)
+    {
+        var asa = new DataSet(new List<GenericVector>(cluster.ToList()));
+          Console.WriteLine("ddd " + cluster.Count());
+    }
+
+
     var k = new Kmeans(4, 100, data);
     k.Run();
     k.PrintClusters();
@@ -103,15 +113,23 @@
             }
         },
         enableMouseTracking: false
-    },{
-        type: 'scatter',
-        name: 'Grade per attempts',
-        data: @Html.Raw(data.ToString()),
-        marker: {
-            radius: 4
+    },
+        @foreach (var cluster in d.DataClusters)
+        {
+            var dataa = new DataSet(new List<GenericVector>(cluster.ToList()));
+            <text>
+            {
+                type: 'scatter',
+                name: 'Grade per attempts',
+                data: @Html.Raw(dataa.ToString()),
+                marker: {
+                    radius: 4
+                }
+
+            },
+        </text>
         }
-        
-    }
+
     ]
 });
 

@@ -7,7 +7,10 @@ namespace Clustering
     public class KGenericVector : GenericVector
     {
         //PROPERTIES
-        public int Cluster { get; set; }
+//        public int Cluster;
+        public int? Cluster { get; set; }
+        public bool Visited { get; set; }
+        public bool Noise { get; set; }
 
 
 
