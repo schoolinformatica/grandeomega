@@ -16,7 +16,6 @@ namespace Highcharts
             _replacers["name"] = name;
             _replacers["marker"] = marker.ToString().ToLower();
             _replacers["mousetracking"] = tracking.ToString().ToLower();
-
             Template = "dataseries";
         }
 

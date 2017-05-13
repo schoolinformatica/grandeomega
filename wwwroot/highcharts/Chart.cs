@@ -11,8 +11,9 @@ namespace Highcharts
 
         public string Template { get; }
 
-        public Chart()
+        public Chart(string divId)
         {
+            _replacers["divid"] = divId;
             Template = "scatterplot";
         }
 

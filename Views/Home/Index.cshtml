@@ -1,4 +1,5 @@
 @using System.Linq;
+@using System.Net.Http.Headers
 @using Clustering
 @using Data
 @using Highcharts
@@ -25,17 +26,33 @@
 
 <div class="row">
     <h1>Statistics</h1>
-    <div id="container" style="min-width: 310px; height: 400px; max-width: 800px; margin: 0 auto"></div>
+    <div id="plotdbscan" style="min-width: 310px; height: 400px; max-width: 800px; margin: 0 auto"></div>
+    <div id="plotkmeans" style="min-width: 310px; height: 400px; max-width: 800px; margin: 0 auto"></div>
 
     <script src="~/lib/highcharts/highcharts.js"></script>
 </div>
 
 
 @{
-    var dataseries = new DataSeries("scatter", data, "ScatterPlot");
-    var plot = new Chart();
-    plot.Set("chart", "scatter");
-    plot.Set("title", "Test");
-    plot.AddDataSeries(dataseries);
+    var dataKmeans = new List<DataSet>();
+    var plotDbscan = new Chart("plotdbscan");
+    var plotKmeans = new Chart("plotkmeans");
+
+    foreach (var cluster in d.DataClusters)
+    {
+        plotDbscan.AddDataSeries(new DataSeries("scatter", new DataSet(cluster.Select(x => x as GenericVector).ToList()), "Cluster " + cluster.Key));
+    }
+
+    foreach (var cluster in k.DataClusters)
+    {
+        plotKmeans.AddDataSeries(new DataSeries("scatter", new DataSet(cluster.Select(x => x as GenericVector).ToList()), "Cluster " + cluster.Key));
+    }
+
+    plotDbscan.Set("chart", "scatter");
+    plotDbscan.Set("title", "Cluster Dbscan");
+    plotKmeans.Set("chart", "scatter");
+    plotKmeans.Set("title", "Cluster Kmeans");
 }
-@Html.Raw(plot.CreateTemplate())
+
+@Html.Raw(plotDbscan.CreateTemplate())
+@Html.Raw(plotKmeans.CreateTemplate())
