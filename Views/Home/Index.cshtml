@@ -1,139 +1,41 @@
 @using System.Linq;
 @using Clustering
 @using Data
-@using models
+@using Highcharts
 
 @{
     ViewData["Title"] = "Home Page";
 }
 
 @{
-    var ctx = Students.students.Where(x => x.Grade > 0);
-    foreach (var student in ctx)
+    var gradedStudents = Students.students.Where(x => x.Grade > 0);
+
+    foreach (var student in gradedStudents)
     {
         student.Filter();
     }
 
-    var data = new DataSet(ctx.Select(x => x.ToGenericVector()).ToList());
+    var data = new DataSet(gradedStudents.Select(x => x.ToGenericVector()).ToList());
 
     var d = new Dbscan(50, 3, data);
-    d.Run();
-
-    foreach (var cluster in d.DataClusters)
-    {
-        var asa = new DataSet(new List<GenericVector>(cluster.ToList()));
-          Console.WriteLine("ddd " + cluster.Count());
-    }
-
-
     var k = new Kmeans(4, 100, data);
+    d.Run();
     k.Run();
-    k.PrintClusters();
-//    data = new DataSet(new List<GenericVector>(k.DataSet.Where(x => x.Cluster == 1).ToList()));
 }
 
 <div class="row">
     <h1>Statistics</h1>
     <div id="container" style="min-width: 310px; height: 400px; max-width: 800px; margin: 0 auto"></div>
-    <div id="container2" style="min-width: 310px; height: 400px; max-width: 800px; margin: 0 auto"></div>
-    
-   <script src="~/lib/highcharts/highcharts.js"></script>
 
-   <script>
-       Highcharts.chart('container', {
-    chart: {
-        type: 'scatter',
-        zoomType: 'xy'
-    },
-    title: {
-        text: 'Attempts vs final grade'
-    },
-    subtitle: {
-        text: 'Source: GrandeOmega'
-    },
-    xAxis: {
-        title: {
-            enabled: true,
-            text: 'Attempts'
-        },
-        startOnTick: true,
-        endOnTick: true,
-        showLastLabel: true
-    },
-    yAxis: {
-        title: {
-            text: 'Grade'
-        }
-    },
-    legend: {
-        layout: 'vertical',
-        align: 'left',
-        verticalAlign: 'top',
-        x: 100,
-        y: 70,
-        floating: true,
-        backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF',
-        borderWidth: 1
-    },
-    plotOptions: {
-        scatter: {
-            marker: {
-                radius: 5,
-                states: {
-                    hover: {
-                        enabled: true,
-                        lineColor: 'rgb(100,100,100)'
-                    }
-                }
-            },
-            states: {
-                hover: {
-                    marker: {
-                        enabled: false
-                    }
-                }
-            },
-            tooltip: {
-                headerFormat: '<b>{series.name}</b><br>',
-                pointFormat: '{point.x} success/attempts (%), {point.y} grade'
-            }
-        }
-    },
-    series: [
-        {
-        type: 'line',
-        name: 'Regression Line',
-        data: [[0, 1.11], [2000, 75]],
-        marker: {
-            enabled: false
-        },
-        states: {
-            hover: {
-                lineWidth: 0
-            }
-        },
-        enableMouseTracking: false
-    },
-        @foreach (var cluster in d.DataClusters)
-        {
-            var dataa = new DataSet(new List<GenericVector>(cluster.ToList()));
-            <text>
-            {
-                type: 'scatter',
-                name: 'Grade per attempts',
-                data: @Html.Raw(dataa.ToString()),
-                marker: {
-                    radius: 4
-                }
-
-            },
-        </text>
-        }
-
-    ]
-});
-
-   </script>
-
-  
+    <script src="~/lib/highcharts/highcharts.js"></script>
 </div>
+
+
+@{
+    var dataseries = new DataSeries("scatter", data, "ScatterPlot");
+    var plot = new Chart();
+    plot.Set("chart", "scatter");
+    plot.Set("title", "Test");
+    plot.AddDataSeries(dataseries);
+}
+@Html.Raw(plot.CreateTemplate())

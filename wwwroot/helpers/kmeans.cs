@@ -13,6 +13,7 @@ namespace Clustering
 
 
         //PROPERTIES
+        public IEnumerable<IGrouping<int?, KGenericVector>> DataClusters { get; private set; }
 
         private readonly int _clusters;
         private readonly int _iterations;
@@ -41,6 +42,8 @@ namespace Clustering
                 if (!IsChangedCluster(oldClusterValues, _dataSet.Select(p => p.Cluster).ToList()))
                     break;
             }
+
+            DataClusters = _dataSet.GroupBy(x => x.Cluster);
         }
 
         public double GetSquaredErrors()
@@ -100,7 +103,7 @@ namespace Clustering
         }
 
 
-        private static bool IsChangedCluster(List<int?> a, List<int?> b)
+        private static bool IsChangedCluster(IEnumerable<int?> a, IReadOnlyList<int?> b)
         {
             return a.Where((t, i) => t != b[i]).Any();
         }

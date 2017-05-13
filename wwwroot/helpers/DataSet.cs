@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Highcharts;
 
 namespace Data
 {
-    public class DataSet : IEnumerable<GenericVector>
+    public class DataSet : IEnumerable<GenericVector>, IChartsList
     {
         #region Fields
 
@@ -40,6 +41,11 @@ namespace Data
         public override string ToString()
         {
             return _data.Aggregate("[", (current, vector) => current + (vector.ToString() + ",")) + "]";
+        }
+
+        public string ToChartsList()
+        {
+            return ToString();
         }
 
         #endregion
