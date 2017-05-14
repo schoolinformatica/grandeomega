@@ -16,9 +16,6 @@ addons:
     packages:
     - dotnet-dev-1.0.1
 
-before_script:
-  dotnet restore
-
 script:
   - chmod +x build.sh 
   - ./build.sh
