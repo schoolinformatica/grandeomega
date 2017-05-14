@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68ce3d5b-6b8d-4992-93e0-e03064b5ad58" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wwwroot/test.cs" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/project.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webapp.xproj" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.webapp/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.webapp/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program.cs" afterPath="$PROJECT_DIR$/Program.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp.sln" afterPath="$PROJECT_DIR$/webapp.sln" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,7 +14,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="KGenericVector.cs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="KGenericVector.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wwwroot/helpers/KGenericVector.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
@@ -95,7 +90,6 @@
             <state relative-caret-position="60">
               <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding>
-                <marker date="1494757600206" expanded="true" signature="32:71" ph="{...}" />
                 <marker date="1494757600206" expanded="true" signature="56:69" ph="{...}" />
               </folding>
             </state>
@@ -131,7 +125,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="webapp.csproj" pinned="false" current-in-tab="true">
+      <file leaf-file-name="webapp.csproj" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webapp.csproj">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
@@ -220,25 +214,7 @@
               <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="webapp (reloading...)" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp (1 project)" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp (reloading...)" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wwwroot" />
+              <option name="myItemId" value="webapp" />
               <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
             </PATH_ELEMENT>
           </PATH>
@@ -370,12 +346,13 @@
       <workItem from="1494665938039" duration="11202000" />
       <workItem from="1494754268546" duration="1707000" />
       <workItem from="1494756699224" duration="275000" />
-      <workItem from="1494757014244" duration="854000" />
+      <workItem from="1494757014244" duration="1480000" />
+      <workItem from="1494759131059" duration="20000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52141000" />
+    <option name="totallyTimeSpent" value="52787000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -775,21 +752,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wwwroot/helpers/KGenericVector.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="41" lean-forward="false" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
-          <folding>
-            <marker date="1494351462195" expanded="true" signature="6:40" ph="..." />
-            <marker date="1494351462195" expanded="true" signature="62:1043" ph="{...}" />
-            <marker date="1494351462195" expanded="true" signature="112:1041" ph="{...}" />
-            <marker date="1494351462195" expanded="true" signature="127:169" ph="/* PROPERTIES ... */" />
-            <marker date="1494351462195" expanded="true" signature="552:852" ph="{...}" />
-            <marker date="1494351462195" expanded="true" signature="907:1034" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webapp.xproj" />
     <entry file="file://$PROJECT_DIR$/wwwroot/highcharts/Chart.cs">
       <provider selected="true" editor-type-id="text-editor">
@@ -851,7 +813,6 @@
         <state relative-caret-position="60">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
-            <marker date="1494757600206" expanded="true" signature="32:71" ph="{...}" />
             <marker date="1494757600206" expanded="true" signature="56:69" ph="{...}" />
           </folding>
         </state>
@@ -861,18 +822,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1478819018000" expanded="false" signature="6:475" ph="..." />
-            <marker date="1478819018000" expanded="true" signature="501:3104" ph="{...}" />
-            <marker date="1478819018000" expanded="true" signature="528:3102" ph="{...}" />
-            <marker date="1478819018000" expanded="true" signature="582:1200" ph="{...}" />
-            <marker date="1478819018000" expanded="true" signature="909:1097" ph="{...}" />
-            <marker date="1478819018000" expanded="true" signature="1427:2035" ph="{...}" />
-            <marker date="1478819018000" expanded="true" signature="2253:3096" ph="{...}" />
-            <marker date="1478819018000" expanded="true" signature="2414:2573" ph="{...}" />
-            <marker date="1478819018000" expanded="true" signature="2590:2674" ph="{...}" />
-            <marker date="1478819018000" expanded="true" signature="2913:3084" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -881,6 +830,21 @@
         <state relative-caret-position="195">
           <caret line="13" column="31" lean-forward="false" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wwwroot/helpers/KGenericVector.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="41" lean-forward="false" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+          <folding>
+            <marker date="1494351462195" expanded="true" signature="6:40" ph="..." />
+            <marker date="1494351462195" expanded="true" signature="62:1043" ph="{...}" />
+            <marker date="1494351462195" expanded="true" signature="112:1041" ph="{...}" />
+            <marker date="1494351462195" expanded="true" signature="127:169" ph="/* PROPERTIES ... */" />
+            <marker date="1494351462195" expanded="true" signature="552:852" ph="{...}" />
+            <marker date="1494351462195" expanded="true" signature="907:1034" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
