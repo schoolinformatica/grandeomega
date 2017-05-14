@@ -8,4 +8,7 @@ ls
 dotnet --version
 dotnet restore
 dotnet build
-dotnet run
+dotnet run &
+sleep 10
+wget "localhost:5000" --timeout 30 -O - 2>/dev/null
+
