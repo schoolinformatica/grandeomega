@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68ce3d5b-6b8d-4992-93e0-e03064b5ad58" name="Default" comment="" />
+    <list default="true" id="68ce3d5b-6b8d-4992-93e0-e03064b5ad58" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.sh" afterPath="$PROJECT_DIR$/build.sh" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,11 +52,12 @@
       <file leaf-file-name="Index.cshtml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Views/Home/Index.cshtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="24" column="1" lean-forward="false" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+            <state relative-caret-position="837">
+              <caret line="57" column="38" lean-forward="false" selection-start-line="57" selection-start-column="38" selection-end-line="57" selection-end-column="38" />
               <folding>
                 <marker date="1494679018855" expanded="true" signature="7:98" ph="..." />
                 <marker date="1494679018855" expanded="true" signature="100:141" ph="@..." />
+                <marker date="1494679018855" expanded="true" signature="143:487" ph="@..." />
                 <marker date="1494679018855" expanded="true" signature="258:296" ph="{...}" />
                 <marker date="1494679018855" expanded="true" signature="489:809" ph="&lt;div.../&gt;" />
                 <marker date="1494679018855" expanded="true" signature="812:1539" ph="@..." />
@@ -157,6 +160,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="webapp (1 project)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
               <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
             </PATH_ELEMENT>
           </PATH>
@@ -285,12 +292,12 @@
       <workItem from="1494236624950" duration="1595000" />
       <workItem from="1494347637142" duration="6552000" />
       <workItem from="1494665938039" duration="11202000" />
-      <workItem from="1494754268546" duration="8000" />
+      <workItem from="1494754268546" duration="652000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49313000" />
+    <option name="totallyTimeSpent" value="49957000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -303,7 +310,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="32" width="1926" height="1051" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -314,7 +320,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Change Signature" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -406,6 +412,7 @@
           <folding>
             <marker date="1494679018855" expanded="true" signature="7:98" ph="..." />
             <marker date="1494679018855" expanded="true" signature="100:141" ph="@..." />
+            <marker date="1494679018855" expanded="true" signature="143:487" ph="@..." />
             <marker date="1494679018855" expanded="true" signature="258:296" ph="{...}" />
             <marker date="1494679018855" expanded="true" signature="489:809" ph="&lt;div.../&gt;" />
             <marker date="1494679018855" expanded="true" signature="812:1539" ph="@..." />
@@ -509,6 +516,7 @@
           <folding>
             <marker date="1494679018855" expanded="true" signature="7:98" ph="..." />
             <marker date="1494679018855" expanded="true" signature="100:141" ph="@..." />
+            <marker date="1494679018855" expanded="true" signature="143:487" ph="@..." />
             <marker date="1494679018855" expanded="true" signature="258:296" ph="{...}" />
             <marker date="1494679018855" expanded="true" signature="489:809" ph="&lt;div.../&gt;" />
             <marker date="1494679018855" expanded="true" signature="812:1539" ph="@..." />
@@ -779,11 +787,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Views/Home/Index.cshtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="24" column="1" lean-forward="false" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+        <state relative-caret-position="837">
+          <caret line="57" column="38" lean-forward="false" selection-start-line="57" selection-start-column="38" selection-end-line="57" selection-end-column="38" />
           <folding>
             <marker date="1494679018855" expanded="true" signature="7:98" ph="..." />
             <marker date="1494679018855" expanded="true" signature="100:141" ph="@..." />
+            <marker date="1494679018855" expanded="true" signature="143:487" ph="@..." />
             <marker date="1494679018855" expanded="true" signature="258:296" ph="{...}" />
             <marker date="1494679018855" expanded="true" signature="489:809" ph="&lt;div.../&gt;" />
             <marker date="1494679018855" expanded="true" signature="812:1539" ph="@..." />
