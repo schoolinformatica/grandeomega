@@ -1,5 +1,4 @@
 @using System.Linq;
-@using System.Net.Http.Headers
 @using Clustering
 @using Data
 @using Highcharts
@@ -8,51 +7,84 @@
     ViewData["Title"] = "Home Page";
 }
 
-@{
-    var gradedStudents = Students.students.Where(x => x.Grade > 0);
-
-    foreach (var student in gradedStudents)
-    {
-        student.Filter();
-    }
-
-    var data = new DataSet(gradedStudents.Select(x => x.ToGenericVector()).ToList());
-
-    var d = new Dbscan(50, 3, data);
-    var k = new Kmeans(4, 100, data);
-    d.Run();
-    k.Run();
-}
-
 <div class="row">
     <h1>Statistics</h1>
+
+    <div class="form-inline">
+        <div class="form-group">
+            <label for="dataA">Data A:</label>
+            <select class="form-control" id="dataA">
+                @foreach (var property in Students.properties)
+                {
+                    <option value=@property>@property</option>
+                }
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="dataB">Data B:</label>
+            <select class="form-control" id="dataB">
+                @foreach (var property in Students.properties)
+                {
+                    <option value=@property>@property</option>
+                }
+            </select>
+        </div>
+        <div class="checkbox">
+            <ul style="list-style: none;">
+                <li>
+                    <label><input id="kmeans" type="checkbox"> Kmeans</label>
+                </li>
+                <li>
+                    <label><input id="dbscan" type="checkbox"> Dbscan</label>
+                </li>
+                <li>
+                    <label><input id="simpleregression" type="checkbox"> Simple Regression</label>
+                </li>
+
+            </ul>
+        </div>
+        <button onclick="getGraph()" class="btn btn-default">+</button>
+    </div>
+
+
+
+
     <div id="plotdbscan" style="min-width: 310px; height: 400px; max-width: 800px; margin: 0 auto"></div>
     <div id="plotkmeans" style="min-width: 310px; height: 400px; max-width: 800px; margin: 0 auto"></div>
 
     <script src="~/lib/highcharts/highcharts.js"></script>
+    <script>
+        function getGraph() {
+            var dataA = $("#dataA").val();
+            var dataB = $("#dataB").val();
+            var kmeans = $('#kmeans').is(':checked');
+            var dbscan = $("#dbscan").is(':checked');
+            var simpleregression = $("#simpleregression").is(':checked');
+            $.ajax({
+                type: "POST",
+                url: "/Home/CreateGraph",
+                data: {
+                    DataA: dataA,
+                    DataB: dataB,
+                    Kmeans: kmeans,
+                    Dbscan: dbscan,
+                    Simpleregression: simpleregression
+                },
+                dataType: 'text',
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("Request: " +
+                        XMLHttpRequest.toString() +
+                        "\n\nStatus: " +
+                        textStatus +
+                        "\n\nError: " +
+                        errorThrown);
+                },
+                success: function(result) {
+                    $("#graphs").prepend(result);
+                }
+            });
+        }
+    </script>
+
+    <script id="graphs"></script>
 </div>
-
-
-@{
-    var dataKmeans = new List<DataSet>();
-    var plotDbscan = new Chart("plotdbscan");
-    var plotKmeans = new Chart("plotkmeans");
-
-    foreach (var cluster in d.DataClusters)
-    {
-        plotDbscan.AddDataSeries(new DataSeries("scatter", new DataSet(cluster.Select(x => x as GenericVector).ToList()), "Cluster " + cluster.Key));
-    }
-
-    foreach (var cluster in k.DataClusters)
-    {
-        plotKmeans.AddDataSeries(new DataSeries("scatter", new DataSet(cluster.Select(x => x as GenericVector).ToList()), "Cluster " + cluster.Key));
-    }
-
-    plotDbscan.Set("chart", "scatter");
-    plotDbscan.Set("title", "Cluster Dbscan");
-    plotKmeans.Set("chart", "scatter");
-    plotKmeans.Set("title", "Cluster Kmeans");
-}
-
-@Html.Raw(plotDbscan.CreateTemplate())
-@Html.Raw(plotKmeans.CreateTemplate())

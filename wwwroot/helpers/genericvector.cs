@@ -11,21 +11,35 @@ namespace Data
         //FIELDS
         public List<float> Points = new List<float>();
 
-        
+
         //PROPERTIES
         public int Size => Points.Count;
+
         public float BiggestPoint => Points.Max();
 
 
         //CONSTRUCTORS
 
-        public GenericVector(List<float> points) { Points = points; }
+        public GenericVector(List<float> points)
+        {
+            Points = points;
+        }
 
-        public GenericVector(int size) { size.Times(() => Points.Add(0)); }
+        public GenericVector(params float[] args)
+        {
+            Points = args.ToList();
+        }
 
-        public GenericVector() {}
+        public GenericVector(int size)
+        {
+            size.Times(() => Points.Add(0));
+        }
 
-        
+        public GenericVector()
+        {
+        }
+
+
         //METHODS
         public void Add(float point)
         {
@@ -47,7 +61,7 @@ namespace Data
         {
             for (var i = 0; i < Size; i++)
                 Points[i] /= devider;
-            
+
             return this;
         }
 

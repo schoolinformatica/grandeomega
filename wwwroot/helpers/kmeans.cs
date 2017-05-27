@@ -13,20 +13,25 @@ namespace Clustering
 
 
         //PROPERTIES
-        public IEnumerable<IGrouping<int?, KGenericVector>> DataClusters { get; private set; }
-
+        public List<DataSet> DataClusters => dataClusters;
+        
+        
         private readonly int _clusters;
         private readonly int _iterations;
         private readonly List<KGenericVector> _dataSet;
         private Dictionary<int, KGenericVector> _centroids;
+        private List<DataSet> dataClusters = new List<DataSet>();
 
 
         //CONSTRUCTORS
-        public Kmeans(int k, int iterations, DataSet dataSet)
+        public Kmeans(int k, int iterations, DataSet dataSet, bool run = true)
         {
             _clusters = k;
             _iterations = iterations;
             _dataSet = dataSet.Select(x => new KGenericVector(x)).ToList();
+
+           if(run)
+               Run();
         }
 
 
@@ -43,7 +48,11 @@ namespace Clustering
                     break;
             }
 
-            DataClusters = _dataSet.GroupBy(x => x.Cluster);
+            foreach (var cluster in _dataSet.GroupBy(x => x.Cluster))
+            {
+                var vectors = cluster.Select(x => x as GenericVector).ToList();
+                dataClusters.Add(new DataSet(vectors));
+            }
         }
 
         public double GetSquaredErrors()

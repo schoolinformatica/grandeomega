@@ -31,6 +31,21 @@ namespace Regression
             _sampleB = data.Select(x => x.Points[1]).ToList();
         }
 
+        public DataSet GetLinearRegression()
+        {
+            var xL = _sampleA.Min();
+            var yL = (float)(Slope * xL + YIntercept);
+            Console.WriteLine($"Slope: {Slope} Yintercept: {YIntercept}");
+            
+            var xR = _sampleA.Max();
+            var yR = (float)(Slope * xR + YIntercept);
+
+            
+            var vectors = new List<GenericVector>{new GenericVector(xL, yL), new GenericVector(xR, yR)};
+            return new DataSet(vectors);
+            
+        }
+
         private double PearsonCofficient()
         {
             var sampleLength = _sampleA.Count();
@@ -74,10 +89,23 @@ namespace Regression
 
         private double GetSlope()
         {
-            var sigmaX = StandardDeviation(_sampleA);
-            var sigmaY = StandardDeviation(_sampleB);
+            var meanA = Mean(_sampleA);
+            var meanB = Mean(_sampleB);
+            var nominator = 0.0;
+            var denominator = 0.0;
 
-            return PearsonCorrelation * (sigmaX / sigmaY);
+            for (int i = 0; i < _sampleA.Count(); i++)
+            {
+                nominator += (_sampleA.ElementAt(i) - meanA) * (_sampleB.ElementAt(i) - meanB);
+                denominator += Math.Pow(_sampleA.ElementAt(i) - meanA, 2);
+            }
+
+            return nominator / denominator;
+
+//            var sigmaX = StandardDeviation(_sampleA);
+//            var sigmaY = StandardDeviation(_sampleB);
+//
+//            return PearsonCorrelation * (sigmaY / sigmaX);
         }
 
 

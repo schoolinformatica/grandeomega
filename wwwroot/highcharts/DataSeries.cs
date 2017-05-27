@@ -9,9 +9,9 @@ namespace Highcharts
         public string Template { get; }
         private Dictionary<string, string> _replacers = new Dictionary<string, string>();
 
-        public DataSeries(string type, IChartsList data, string name, bool marker = true, bool tracking = false)
+        public DataSeries(Enum type, IChartsList data, string name, bool marker = true, bool tracking = false)
         {
-            _replacers["type"] = type;
+            _replacers["type"] = GetChartType(type);
             _replacers["data"] = data.ToChartsList();
             _replacers["name"] = name;
             _replacers["marker"] = marker.ToString().ToLower();
@@ -45,6 +45,21 @@ namespace Highcharts
             }
 
             return rep;
+        }
+
+        private static string GetChartType(Enum type)
+        {
+            switch (type)
+            {
+                    case Highcarts.Scatterplot:
+                        return "scatter";
+
+                    case Highcarts.Regression:
+                        return "line";
+
+                    default:
+                        throw  new Exception("Invalid chart type");
+            }
         }
 
     }

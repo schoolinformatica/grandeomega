@@ -8,17 +8,21 @@ namespace Clustering
     public class Dbscan
     {
 
-        public IEnumerable<IGrouping<int?, KGenericVector>> DataClusters { get; private set; }
+        public List<DataSet> DataClusters => dataClusters;
 
         private readonly float _radius;
         private readonly int _minPoints;
         private readonly List<KGenericVector> _dataSet;
+        private List<DataSet> dataClusters  = new List<DataSet>();
 
-        public Dbscan(float eps, int minPoints, DataSet data)
+        public Dbscan(float eps, int minPoints, DataSet data, bool run = true)
         {
             _radius = eps;
             _minPoints = minPoints;
             _dataSet = data.Select(x => new KGenericVector(x)).ToList();
+
+            if(run)
+                Run();
         }
 
         public void Run()
@@ -44,7 +48,11 @@ namespace Clustering
                 }
             }
 
-            DataClusters = _dataSet.Where(x => !x.Noise).GroupBy(x => x.Cluster);
+            foreach (var clust in _dataSet.Where(x => !x.Noise).GroupBy(x => x.Cluster))
+            {
+                var vectors = clust.Select(x => x as GenericVector).ToList();
+                dataClusters.Add(new DataSet(vectors));
+            }
         }
 
 

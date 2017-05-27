@@ -2,7 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Clustering;
+using Data;
+using Highcharts;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using Regression;
 
 namespace WebApplication.Controllers
 {
@@ -13,18 +18,68 @@ namespace WebApplication.Controllers
             return View();
         }
 
-        public IActionResult About()
+        [HttpPost]
+        public string CreateGraph(string DataA, string DataB, bool kmeans, bool dbscan, bool simpleregression)
         {
-            ViewData["Message"] = "Your application description page.";
+            var dataSeries = new List<DataSeries>();
+            var title = $"Plot of {DataA} vs {DataB}";
 
-            return View();
-        }
+            Console.WriteLine(
+                $" \nDataA {DataA}, DataB {DataB}, Kmeans {kmeans}, Dbscan {dbscan}, Simpleregression {simpleregression}\n");
 
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
 
-            return View();
+            var gradedStudents = Students.students.Where(x => x.Grade > 0);
+
+            foreach (var student in gradedStudents)
+            {
+                student.Filter();
+            }
+
+            var data = new DataSet(gradedStudents.Select(x => x.ToGenericVector()).ToList());
+
+            if (kmeans)
+            {
+                var km = new Kmeans(4, 100, data);
+                var clusterId = 1;
+
+                foreach (var cluster in km.DataClusters)
+                {
+                    var header = $"Cluster {clusterId++}";
+                    dataSeries.Add(new DataSeries(Highcarts.Scatterplot, cluster, header));
+                }
+            }
+
+            if (dbscan)
+            {
+                var db = new Dbscan(50, 3, data);
+                var clusterId = 1;
+
+                foreach (var cluster in db.DataClusters)
+                {
+                    var header = $"Cluster {clusterId++}";
+                    dataSeries.Add(new DataSeries(Highcarts.Scatterplot, cluster, header));
+                }
+            }
+
+            if (simpleregression)
+            {
+                var regression = new SimpleRegression(data);
+                var dataSer = new DataSeries(Highcarts.Regression, regression.GetLinearRegression(), "Regression Line");
+                dataSeries.Add(dataSer);
+                Console.WriteLine($"Pearson: {regression.PearsonCorrelation} Spearman: {regression.SpearmanCorrelation}");
+            }
+
+            var plotDbscan = new Chart("plotdbscan");
+
+            foreach (var dataSerie in dataSeries)
+            {
+                plotDbscan.AddDataSeries(dataSerie);
+            }
+
+            plotDbscan.Set("chart", "scatter");
+            plotDbscan.Set("title", title);
+
+            return plotDbscan.CreateTemplate();
         }
 
         public IActionResult Error()

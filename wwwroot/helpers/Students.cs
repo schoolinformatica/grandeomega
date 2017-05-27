@@ -5,11 +5,13 @@ using System.IO;
 using System.Linq;
 using models;
 using System.Text.RegularExpressions;
+using Microsoft.AspNetCore.Authentication;
 
 public static class Students
 {
     public static IEnumerable<IGrouping<string, Dictionary<string, string>>> studentAttempts;
     public static List<Student> students = new List<Student>();
+    public static List<string> properties = new List<string>();
 
     public static void parseData()
     {
@@ -34,7 +36,7 @@ public static class Students
         }
 
         // Regex rgx = new Regex("[^a-zA-Z0-9 -]");
-
+        properties = data.First().Keys.ToList();
         foreach (var attempt in data)
         {
             var att = new Attempt() {
