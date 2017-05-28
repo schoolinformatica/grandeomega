@@ -25,8 +25,8 @@ public static class Students
         }
         var grades = parser.Parse("wwwroot/grades.yaml");
 
-        Dictionary<int, Student> temp = new Dictionary<int, Student>();
-        Dictionary<int, int> gradess = new Dictionary<int, int>();
+        var temp = new Dictionary<int, Student>();
+        var gradess = new Dictionary<int, int>();
 
         foreach(var grade in grades) {
             int score;
@@ -35,23 +35,24 @@ public static class Students
                 gradess.Add(int.Parse(grade["student_id"]), score);
         }
 
-        // Regex rgx = new Regex("[^a-zA-Z0-9 -]");
         properties = data.First().Keys.ToList();
         foreach (var attempt in data)
         {
+            int Class;
+            
             var att = new Attempt() {
                 Id = int.Parse(attempt["id"]),
                 TeachingUnitId = int.Parse(attempt["teaching_unit_id"]),
                 StudentId = int.Parse(attempt["student_id"]),
                 Success = attempt["sort"] == "success" ? true : false,
-                // stepID = int.Parse(attempt["step_id"]), never filled in
                 Date = DateTime.Parse(attempt["utc"].Substring(attempt["utc"].IndexOf('-') - 4))
             };
-
+            
             if(!temp.ContainsKey(att.StudentId)) {
                 var student = new Student() {
                     Id = att.StudentId,
-                    Grade = gradess.ContainsKey(att.StudentId) ? gradess[att.StudentId] : -1
+                    Grade = gradess.ContainsKey(att.StudentId) ? gradess[att.StudentId] : -1,
+                    Class = int.TryParse(attempt["class"], out Class) ? Class : 0
                 };
                 student.Attempts.Add(att);
                 temp.Add(student.Id, student);
@@ -61,60 +62,8 @@ public static class Students
 
             
         }
-
-
         students = temp.Values.ToList();
-
     }
 
-    // public static List<GenericVector> PickDataPerStudent(params string[] args)
-    // {
-    //     var list = new List<GenericVector>();
-    //     foreach (var student in studentAttempts)
-    //     {
-    //         foreach (var attempt in student)
-    //         {
-    //             var point = new GenericVector();
-    //             foreach (var arg in args)
-    //             {
-    //                 if(!attempt.ContainsKey(arg))
-    //                     break;
-    //                 point.Add(float.Parse(attempt[arg]));
-    //             }
-    //             list.Add(point);
-    //         }
-    //     }
-    //     return list;
-    // }
-
-    public static string ToJSList(params string[] args)
-    {
-
-
-        var result = "[";
-        foreach (var student in studentAttempts)
-        {
-            Console.WriteLine(student.First()["utc"].Substring(student.First()["utc"].IndexOf('-') - 4));
-            var date = DateTime.Parse(student.First()["utc"].Substring(student.First()["utc"].IndexOf('-') - 4));
-            if (!student.First().ContainsKey("grade")) continue;
-
-            var suc = 0.0;
-            var fail = 0.0;
-            foreach (var attempt in student)
-            {
-                if (attempt["sort"] == "success")
-                {
-                    suc++;
-                }
-                else
-                {
-                    fail++;
-                }
-            }
-            result += "[" + fail + "," + student.First()["grade"] + "],";
-        }
-        result += "]";
-
-        return result;
-    }
+    
 }

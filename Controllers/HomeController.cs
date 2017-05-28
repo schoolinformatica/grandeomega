@@ -1,12 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Clustering;
 using Data;
 using Highcharts;
+using models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using Regression;
 
 namespace WebApplication.Controllers
@@ -19,7 +18,7 @@ namespace WebApplication.Controllers
         }
 
         [HttpPost]
-        public string CreateGraph(string DataA, string DataB, bool kmeans, bool dbscan, bool simpleregression)
+        public string CreateGraph(Stud DataA, Stud DataB, bool kmeans, bool dbscan, bool simpleregression)
         {
             var dataSeries = new List<DataSeries>();
             var title = $"Plot of {DataA} vs {DataB}";
@@ -35,7 +34,7 @@ namespace WebApplication.Controllers
                 student.Filter();
             }
 
-            var data = new DataSet(gradedStudents.Select(x => x.ToGenericVector()).ToList());
+            var data = new DataSet(gradedStudents.Select(x => x.ToGenericVector(DataA, DataB)).ToList());
 
             if (kmeans)
             {
