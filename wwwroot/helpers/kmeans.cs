@@ -2,40 +2,33 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Data;
-using Helpers;
+using Utilities;
 
 namespace Clustering
 {
     public class Kmeans
     {
-        //FIELDS
         private readonly Random _random = new Random();
 
+        public List<DataSet> DataClusters { get; } = new List<DataSet>();
 
-        //PROPERTIES
-        public List<DataSet> DataClusters => dataClusters;
-        
-        
         private readonly int _clusters;
         private readonly int _iterations;
         private readonly List<KGenericVector> _dataSet;
         private Dictionary<int, KGenericVector> _centroids;
-        private List<DataSet> dataClusters = new List<DataSet>();
 
 
-        //CONSTRUCTORS
         public Kmeans(int k, int iterations, DataSet dataSet, bool run = true)
         {
             _clusters = k;
             _iterations = iterations;
             _dataSet = dataSet.Select(x => new KGenericVector(x)).ToList();
 
-           if(run)
-               Run();
+            if (run)
+                Run();
         }
 
 
-        //METHODS
         public void Run()
         {
             _centroids = GenerateRandomCentroids(_clusters);
@@ -51,7 +44,7 @@ namespace Clustering
             foreach (var cluster in _dataSet.GroupBy(x => x.Cluster))
             {
                 var vectors = cluster.Select(x => x as GenericVector).ToList();
-                dataClusters.Add(new DataSet(vectors));
+                DataClusters.Add(new DataSet(vectors));
             }
         }
 
@@ -106,10 +99,7 @@ namespace Clustering
             return clusters;
         }
 
-        private KGenericVector GetRandomVector()
-        {
-            return _dataSet.ElementAt(_random.Next(_dataSet.Count));
-        }
+        private KGenericVector GetRandomVector() => _dataSet.ElementAt(_random.Next(_dataSet.Count));
 
 
         private static bool IsChangedCluster(IEnumerable<int?> a, IReadOnlyList<int?> b)

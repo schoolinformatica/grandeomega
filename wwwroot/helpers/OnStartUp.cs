@@ -8,6 +8,5 @@ namespace startup
         {
             Students.parseData();
         }
-
     }
 }

@@ -1,26 +1,24 @@
 ﻿using System;
 using Data;
-using Helpers;
+using Utilities;
 
 namespace Clustering
 {
     public class KGenericVector : GenericVector
     {
-        //PROPERTIES
-//        public int Cluster;
         public int? Cluster { get; set; }
         public bool Visited { get; set; }
         public bool Noise { get; set; }
 
 
+        public KGenericVector(int size)
+        {
+            size.Times(() => Points.Add(0));
+        }
 
-        //CONSTRUCTORS
-        public KGenericVector(int size) { size.Times(() => Points.Add(0)); }
-        public KGenericVector(GenericVector v) { Points = v.Points; }
+        public KGenericVector(GenericVector v) => Points = v.Points;
 
 
-
-        //METHODS
         public new KGenericVector Sum(GenericVector vectorToSum)
         {
             if (Size != vectorToSum.Size)
@@ -39,6 +37,5 @@ namespace Clustering
 
             return this;
         }
-
     }
 }

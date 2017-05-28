@@ -7,22 +7,20 @@ namespace Clustering
 {
     public class Dbscan
     {
-
-        public List<DataSet> DataClusters => dataClusters;
-
         private readonly float _radius;
         private readonly int _minPoints;
         private readonly List<KGenericVector> _dataSet;
-        private List<DataSet> dataClusters  = new List<DataSet>();
 
-        public Dbscan(float eps, int minPoints, DataSet data, bool run = true)
+        public List<DataSet> DataClusters { get; } = new List<DataSet>();
+
+
+        public Dbscan(float eps, int minPoints, DataSet data)
         {
             _radius = eps;
             _minPoints = minPoints;
             _dataSet = data.Select(x => new KGenericVector(x)).ToList();
 
-            if(run)
-                Run();
+            Run();
         }
 
         public void Run()
@@ -37,6 +35,7 @@ namespace Clustering
 
                 point.Visited = true;
                 var neighbours = RegionQuery(point);
+
                 if (neighbours.Count < _minPoints)
                 {
                     point.Noise = true;
@@ -51,7 +50,7 @@ namespace Clustering
             foreach (var clust in _dataSet.Where(x => !x.Noise).GroupBy(x => x.Cluster))
             {
                 var vectors = clust.Select(x => x as GenericVector).ToList();
-                dataClusters.Add(new DataSet(vectors));
+                DataClusters.Add(new DataSet(vectors));
             }
         }
 
@@ -71,11 +70,10 @@ namespace Clustering
                     if (neighboursOfNeighbour.Count >= _minPoints)
                         neighbours.AddRange(neighboursOfNeighbour);
                 }
-
+                
+                //TODO: Change this
                 if (neighbour.Cluster == null)
-                {
                     neighbour.Cluster = cluster;
-                }
             }
         }
 

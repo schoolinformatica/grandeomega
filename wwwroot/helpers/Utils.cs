@@ -1,13 +1,15 @@
 using System;
 
-namespace Helpers
+namespace Utilities
 {
-    public static class Extensions
+    public static class Utils
     {
         public static void Times(this int count, System.Action action)
         {
             for (var i = 0; i < count; i++)
                 action();
         }
+        
+        
     }
 }

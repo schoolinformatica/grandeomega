@@ -16,12 +16,6 @@ namespace Regression
         public double Slope => GetSlope();
         public double YIntercept => Mean(_sampleB) - (Slope * Mean(_sampleA));
 
-        public SimpleRegression(IEnumerable<float> sampleA, IEnumerable<float> sampleB)
-        {
-            this._sampleA = sampleA;
-            this._sampleB = sampleB;
-        }
-
         public SimpleRegression(DataSet data)
         {
             if (data.Dimensions != 2)
@@ -34,16 +28,12 @@ namespace Regression
         public DataSet GetLinearRegression()
         {
             var xL = _sampleA.Min();
-            var yL = (float)(Slope * xL + YIntercept);
-            Console.WriteLine($"Slope: {Slope} Yintercept: {YIntercept}");
-            
+            var yL = (float) (Slope * xL + YIntercept);
             var xR = _sampleA.Max();
-            var yR = (float)(Slope * xR + YIntercept);
+            var yR = (float) (Slope * xR + YIntercept);
+            var vectors = new List<GenericVector> {new GenericVector(xL, yL), new GenericVector(xR, yR)};
 
-            
-            var vectors = new List<GenericVector>{new GenericVector(xL, yL), new GenericVector(xR, yR)};
             return new DataSet(vectors);
-            
         }
 
         private double PearsonCofficient()
@@ -70,6 +60,7 @@ namespace Regression
                               (sumYSquared - Math.Pow(sumY, 2) / sampleLength)));
         }
 
+        //TODO: Fix this, still some error within it
         private double SpearmanCofficient()
         {
             var rankingA = ComputeRanking(_sampleA);
@@ -94,29 +85,25 @@ namespace Regression
             var nominator = 0.0;
             var denominator = 0.0;
 
-            for (int i = 0; i < _sampleA.Count(); i++)
+            for (var i = 0; i < _sampleA.Count(); i++)
             {
                 nominator += (_sampleA.ElementAt(i) - meanA) * (_sampleB.ElementAt(i) - meanB);
                 denominator += Math.Pow(_sampleA.ElementAt(i) - meanA, 2);
             }
 
             return nominator / denominator;
-
-//            var sigmaX = StandardDeviation(_sampleA);
-//            var sigmaY = StandardDeviation(_sampleB);
-//
-//            return PearsonCorrelation * (sigmaY / sigmaX);
         }
 
 
-        // Computes the correction factor of ranked data. This is because
-        // when there are ties in the data, the spearmans rank correlation
-        // can not be equal to 1 or -1 without the correction factor. By
-        // adding the correction for ties, it is possible to gain 1 or -1
-        // results again.
-        //
-        // Formula:        (m * (m^2 - 1 )) / 12
-        //
+        /* Computes the correction factor of ranked data. This is because
+         * when there are ties in the data, the spearmans rank correlation
+         * can not be equal to 1 or -1 without the correction factor. By
+         * adding the correction for ties, it is possible to gain 1 or -1
+         * results again.
+         *
+         * Formula:        (m * (m^2 - 1 )) / 12
+         *
+         */
 
         private static double CorrectionFactor(IEnumerable<float> rankedData)
         {
@@ -128,10 +115,11 @@ namespace Regression
         }
 
 
-        // Computes the ranks of items in a list by descending order.
-        // When there are identical values in the list (a "tie") the
-        // average of the ranks they would have occupied is used as
-        // the rank for those items.
+        /* Computes the ranks of items in a list by descending order.
+         * When there are identical values in the list (a "tie") the
+         * average of the ranks they would have occupied is used as
+         * the rank for those items.
+         */
 
         private static Dictionary<float, float> ComputeRanking(IEnumerable<float> values)
         {
@@ -156,14 +144,10 @@ namespace Regression
                     ranking.Add(value, i + 1);
                     duplicates = 1;
                 }
-
                 prevValue = value;
             }
-
             return ranking;
         }
-
-
 
         private static double StandardDeviation(IEnumerable<float> sample)
         {
@@ -173,9 +157,6 @@ namespace Regression
             return sample.Select(x => Math.Pow(x - meanSample, 2)).Sum() / sampleSize;
         }
 
-        private static double Mean(IEnumerable<float> sample)
-        {
-            return sample.Sum() / sample.Count();
-        }
+        private static double Mean(IEnumerable<float> sample) => sample.Sum() / sample.Count();
     }
 }

@@ -1,34 +1,24 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Helpers;
+using Utilities;
 
 namespace Data
 
 {
     public class GenericVector
     {
-        //FIELDS
         public List<float> Points = new List<float>();
 
 
-        //PROPERTIES
         public int Size => Points.Count;
 
         public float BiggestPoint => Points.Max();
 
 
-        //CONSTRUCTORS
+        public GenericVector(List<float> points) => Points = points;
 
-        public GenericVector(List<float> points)
-        {
-            Points = points;
-        }
-
-        public GenericVector(params float[] args)
-        {
-            Points = args.ToList();
-        }
+        public GenericVector(params float[] args) => Points = args.ToList();
 
         public GenericVector(int size)
         {
@@ -40,8 +30,7 @@ namespace Data
         }
 
 
-        //METHODS
-        public void Add(float point)
+        public void AddPoint(float point)
         {
             Points.Add(point);
         }
@@ -64,13 +53,6 @@ namespace Data
 
             return this;
         }
-
-
-        // public bool IsBiggerAs(GenericVector v)
-        // {
-        //     return Points.Where((p, i) => p > v.Points[i]).Count() > Points.Count;
-        // }
-
 
         public override string ToString()
         {

@@ -37,7 +37,7 @@ namespace models
             var v = new GenericVector();
             
             for (int i = 0; i < args.Length; i++)
-               v.Add(GetValueOf(args[i]));
+               v.AddPoint(GetValueOf(args[i]));
             
             return v;
         }

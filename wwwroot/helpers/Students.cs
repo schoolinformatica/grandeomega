@@ -15,55 +15,56 @@ public static class Students
 
     public static void parseData()
     {
-        var WatchDir = "wwwroot/dbdump";
-        var files = Directory.GetFiles(WatchDir);
+        const string watchDir = "wwwroot/dbdump";
+        var files = Directory.GetFiles(watchDir);
         var parser = new Parser();
         var data = new List<Dictionary<string, string>>();
+        
         foreach (var file in files)
         {
             data.AddRange(parser.Parse(file));
         }
+        
         var grades = parser.Parse("wwwroot/grades.yaml");
-
         var temp = new Dictionary<int, Student>();
         var gradess = new Dictionary<int, int>();
 
-        foreach(var grade in grades) {
+        foreach (var grade in grades)
+        {
             int score;
-            var isInt = int.TryParse(grade["grade"], out score);
-            if(isInt)
+            if (int.TryParse(grade["grade"], out score))
                 gradess.Add(int.Parse(grade["student_id"]), score);
         }
 
         properties = data.First().Keys.ToList();
         foreach (var attempt in data)
         {
-            int Class;
-            
-            var att = new Attempt() {
+            var att = new Attempt()
+            {
                 Id = int.Parse(attempt["id"]),
                 TeachingUnitId = int.Parse(attempt["teaching_unit_id"]),
                 StudentId = int.Parse(attempt["student_id"]),
                 Success = attempt["sort"] == "success" ? true : false,
                 Date = DateTime.Parse(attempt["utc"].Substring(attempt["utc"].IndexOf('-') - 4))
             };
-            
-            if(!temp.ContainsKey(att.StudentId)) {
-                var student = new Student() {
+
+            if (!temp.ContainsKey(att.StudentId))
+            {
+                int Class;
+                var student = new Student()
+                {
                     Id = att.StudentId,
                     Grade = gradess.ContainsKey(att.StudentId) ? gradess[att.StudentId] : -1,
                     Class = int.TryParse(attempt["class"], out Class) ? Class : 0
                 };
                 student.Attempts.Add(att);
                 temp.Add(student.Id, student);
-            } else {
+            }
+            else
+            {
                 temp[att.StudentId].Attempts.Add(att);
             }
-
-            
         }
         students = temp.Values.ToList();
     }
-
-    
 }
