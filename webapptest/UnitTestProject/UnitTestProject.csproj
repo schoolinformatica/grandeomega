@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0" />
+    <PackageReference Include="xunit" Version="2.2.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DataTools\DataTools.csproj">
+      <Project>{5a587193-5bb5-4797-b489-8f68dd10884d}</Project>
+      <Name>DataTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Highcharts\Highcharts.csproj">
+      <Project>{40a7ca73-52f4-4881-8f0e-c97816e7e96b}</Project>
+      <Name>Highcharts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\webapp\webapp.csproj">
+      <Project>{f7f7e630-9c22-4256-91ee-df958fd6ead8}</Project>
+      <Name>webapp</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
