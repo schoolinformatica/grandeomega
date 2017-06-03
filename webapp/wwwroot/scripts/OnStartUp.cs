@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using Data;
+using DataTools.classification;
 
 namespace startup
 {
@@ -7,6 +10,9 @@ namespace startup
         public static void Init()
         {
             Students.parseData();
+
         }
+
+        
     }
 }

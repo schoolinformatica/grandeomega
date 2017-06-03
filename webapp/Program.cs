@@ -15,7 +15,7 @@ namespace WebApplication
                 .UseIISIntegration()
                 .UseStartup<Startup>()
                 .Build();
-
+            
             host.Run();
         }
     }

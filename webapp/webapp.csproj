@@ -64,5 +64,9 @@
       <Project>{40a7ca73-52f4-4881-8f0e-c97816e7e96b}</Project>
       <Name>Highcharts</Name>
     </ProjectReference>
+    <ProjectReference Include="..\KdTree\KdTree.csproj">
+      <Project>{ac532b31-b1ec-497c-aa97-61d44b9b529d}</Project>
+      <Name>KdTree</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

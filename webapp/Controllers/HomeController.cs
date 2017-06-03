@@ -17,7 +17,8 @@ namespace WebApplication.Controllers
         {
             return View();
         }
-
+        
+        //TODO: Add div tag to params
         [HttpPost]
         public string CreateGraph(Stud dataA, Stud dataB, bool kmeans, bool dbscan, bool simpleregression)
         {
@@ -25,6 +26,7 @@ namespace WebApplication.Controllers
             var title = $"Plot of {dataA} vs {dataB}";
             var chart = new Chart(Highchart.Scatterplot);
 
+            
             Console.WriteLine(
                 $" \nDataA {dataA}, DataB {dataB}, Kmeans {kmeans}, Dbscan {dbscan}, Simpleregression {simpleregression}\n");
 
@@ -71,7 +73,7 @@ namespace WebApplication.Controllers
                     "Regression Line");
                 
                 dataSeries.Add(dataSer);
-                chart.SetSubtitle(regression.PearsonCorrelation.ToString());
+                chart.SetSubtitle($"Pearson: {regression.PearsonCorrelation} Spearman: {regression.SpearmanCorrelation}");
           
             }
 

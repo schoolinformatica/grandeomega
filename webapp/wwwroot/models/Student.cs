@@ -5,6 +5,7 @@ using Data;
 
 namespace models
 {
+    //TODO: Make typesafe enum for the Student possibilities
     public class Student
     {
         public int Id;

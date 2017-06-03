@@ -6,7 +6,7 @@ using System.Linq;
 using models;
 using System.Text.RegularExpressions;
 using Microsoft.AspNetCore.Authentication;
-
+//TODO: Replace all strings with enum/constants
 public static class Students
 {
     public static IEnumerable<IGrouping<string, Dictionary<string, string>>> studentAttempts;
@@ -44,7 +44,7 @@ public static class Students
                 Id = int.Parse(attempt["id"]),
                 TeachingUnitId = int.Parse(attempt["teaching_unit_id"]),
                 StudentId = int.Parse(attempt["student_id"]),
-                Success = attempt["sort"] == "success",
+                Success = attempt["sort"].Trim() == "success",
                 Date = DateTime.Parse(attempt["utc"].Substring(attempt["utc"].IndexOf('-') - 4))
             };
 
