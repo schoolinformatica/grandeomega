@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Clustering;
 using Data;
+using DataTools.classification;
 using Highcharts;
 using models;
 using Microsoft.AspNetCore.Mvc;
@@ -25,8 +26,16 @@ namespace WebApplication.Controllers
             var dataSeries = new List<DataSeries>();
             var title = $"Plot of {dataA} vs {dataB}";
             var chart = new Chart(Highchart.Scatterplot);
-
             
+            var r = new Random();
+            var samples = new List<GenericVector>();
+
+            for (int i = 0; i < 100; i++)
+            {
+                samples.Add(new GenericVector(r.Next(0, 100), r.Next(0, 100), r.Next(0, 100)));
+            }
+
+        
             Console.WriteLine(
                 $" \nDataA {dataA}, DataB {dataB}, Kmeans {kmeans}, Dbscan {dbscan}, Simpleregression {simpleregression}\n");
 
@@ -39,6 +48,10 @@ namespace WebApplication.Controllers
             }
 
             var data = new Dataset(gradedStudents.Select(x => x.ToGenericVector(dataA, dataB)));
+            var k = KDTree.OfList(data, data.Dimensions);
+            Console.WriteLine(k.Value);
+            Console.WriteLine(k.Right.Value);
+            Console.WriteLine(k.Right.Right.Value);
 
             if (kmeans)
             {

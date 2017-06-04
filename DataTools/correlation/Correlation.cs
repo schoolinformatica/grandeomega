@@ -68,15 +68,14 @@ namespace Regression
         {
             var rankingA = ComputeRanking(_sampleA);
             var rankingB = ComputeRanking(_sampleB);
-            var rankedSampleA = _sampleA.Select(x => rankingA[x]);
-            var rankedSampleB = _sampleB.Select(x => rankingB[x]);
+            var rankedSampleA = _sampleA.Select(x => rankingA[x]).ToArray();
+            var rankedSampleB = _sampleB.Select(x => rankingB[x]).ToArray();
             var correctionFactor = CorrectionFactor(rankedSampleA) + CorrectionFactor(rankedSampleB);
-            var length = rankedSampleA.Count();
+            var length = rankedSampleA.Count(); 
+            var sumDifferenceSquared = 0.0;
 
-            var sumDifferenceSquared = rankedSampleA
-                .Select((x, i) => Math.Pow(x - rankedSampleB.ElementAt(i), 2))
-                .Sum(x => x);
-
+            for (int i = 0; i < rankedSampleA.Count(); i++)
+                sumDifferenceSquared += Math.Pow(rankedSampleA[i] - rankedSampleB[i], 2);
 
             return 1 - ((6 * sumDifferenceSquared + correctionFactor) / (length * (length * length - 1)));
         }
@@ -143,12 +142,15 @@ namespace Regression
                 else
                 {
                     if (i != 0)
+                    {
                         ranking[prevValue] /= duplicates;
+                    }
                     ranking.Add(value, i + 1);
                     duplicates = 1;
                 }
                 prevValue = value;
             }
+            ranking[prevValue] /= duplicates;
             return ranking;
         }
 
