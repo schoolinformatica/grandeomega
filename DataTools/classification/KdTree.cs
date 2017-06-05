@@ -18,11 +18,18 @@ namespace DataTools.classification
         }
 
 
-        public GenericVector[] GetNearestNeighbours(GenericVector point, int neighbours)
+        public GenericVector[] GetNearestNeighbours(GenericVector point, int neighboursAmount)
+        {
+            var neighbours = new GenericVector[neighboursAmount];
+            KNearestNeighbours(point, neighbours);
+            return neighbours;
+        }
+
+        private void KNearestNeighbours(GenericVector point, GenericVector[] neighbours)
         {
             
         }
-
+        
         public static ITree<GenericVector> OfList(IEnumerable<GenericVector> list, int dimensions)
         {
             const int firstDimension = 0;
@@ -30,7 +37,8 @@ namespace DataTools.classification
             return CreateTreeOfList(list.ToList(), firstDimension, dimensions);
         }
 
-        private static ITree<GenericVector> CreateTreeOfList(List<GenericVector> list, int dimension, int dimensionCount)
+        private static ITree<GenericVector> CreateTreeOfList(List<GenericVector> list, int dimension,
+            int dimensionCount)
         {
             var listCount = list.Count;
             var mean = listCount / 2;
@@ -41,7 +49,7 @@ namespace DataTools.classification
             {
                 return new Empty<GenericVector>();
             }
-            
+
 
             return new KDTree(CreateTreeOfList(list.GetRange(0, mean), currDimension + 1, dimensionCount), list[mean],
                 CreateTreeOfList(list.GetRange(mean + 1, listCount - mean - 1), currDimension + 1, dimensionCount));
