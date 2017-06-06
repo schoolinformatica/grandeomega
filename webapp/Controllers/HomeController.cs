@@ -86,7 +86,7 @@ namespace WebApplication.Controllers
                 var regression = new SimpleRegression(data);
                 var dataSer = new DataSeries(Highchart.Regression, new Dataset(regression.GetLinearRegression()),
                     "Regression Line");
-
+                dataSer.SetMarker(false);
                 dataSeries.Add(dataSer);
                 chart.SetSubtitle(
                     $"Pearson: {regression.PearsonCorrelation} Spearman: {regression.SpearmanCorrelation}");
@@ -100,7 +100,8 @@ namespace WebApplication.Controllers
                 var dataSer = new DataSeries(Highchart.Regression,
                     new Dataset(regression.GetPolynomialPoints().OrderBy(x => x[0])),
                     "Regression Line");
-
+                
+                dataSer.SetMarker(false);
                 dataSeries.Add(dataSer);
             }
 
