@@ -17,7 +17,7 @@ namespace webapp.wwwroot.scripts
             _vectors = vectors;
             Dimensions = vectors.First().Size;
         }
-
+        
 
         public string ToChartsList() => ToString();
 
