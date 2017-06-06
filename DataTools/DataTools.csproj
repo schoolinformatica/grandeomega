@@ -3,12 +3,13 @@
     <TargetFramework>netstandard1.4</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="regression" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\KdTree\KdTree.csproj">
       <Project>{ac532b31-b1ec-497c-aa97-61d44b9b529d}</Project>
       <Name>KdTree</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Matrix\Matrix.csproj">
+      <Project>{74de0bf5-011a-47af-b831-8e307dc520f6}</Project>
+      <Name>Matrix</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

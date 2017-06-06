@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using Data;
+using DataTools;
+using DataTools.regression;
 using Regression;
 using Xunit;
 
@@ -68,6 +70,26 @@ namespace UnitTestProject
             var intercept = regression.YIntercept;
             Assert.Equal(a, slope);
             Assert.Equal(b, intercept);
+        }
+
+        [Fact]
+        public void TestPolynomialRegression()
+        {
+            var polyDegrees = 3;
+            var sample = new Vector2[]
+            {
+                new Vector2(80, 6.47),
+                new Vector2(40, 6.24),
+                new Vector2(-40, 5.72),
+                new Vector2(-120, 5.09),
+                new Vector2(-200, 4.30),
+                new Vector2(-280, 3.33)
+            };
+
+            var polyReg = new PolynomialRegression(sample, polyDegrees);
+            
+            Assert.Equal(Math.Round(6.408, 3), Math.Round(polyReg.PredictPoint(70), 3));
+           
         }
     }
 }

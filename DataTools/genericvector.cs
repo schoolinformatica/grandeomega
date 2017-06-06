@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
+using DataTools;
 
 namespace Data
 
@@ -24,6 +26,11 @@ namespace Data
         public override string ToString()
         {
             return "[" + string.Join(", ", _points.Select(x => x.ToString()).ToArray()) + "]";
+        }
+
+        public Vector2 ToVector2(int indexOne = 0, int indexTwo = 1)
+        {
+            return new Vector2(_points[indexOne], _points[indexTwo]);
         }
         
         public static GenericVector Sum(GenericVector a, GenericVector b)
