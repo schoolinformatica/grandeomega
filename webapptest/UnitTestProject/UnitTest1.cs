@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Data;
 using DataTools;
+using DataTools.classification;
 using DataTools.regression;
 using Regression;
 using Xunit;
@@ -89,7 +91,27 @@ namespace UnitTestProject
             var polyReg = new PolynomialRegression(sample, polyDegrees);
             
             Assert.Equal(Math.Round(6.408, 3), Math.Round(polyReg.PredictPoint(70), 3));
-           
+        }
+
+        [Fact]
+        public void TestKnearestClassification()
+        {
+            var r = new Random();
+            var clusters = new Dictionary<int, IEnumerable<GenericVector>>();
+            var samplePoint = new GenericVector(96, 86);
+            var clus = 1;
+            for (int i = 50; i < 201; i+=50)
+            {
+                var sampleData = new List<GenericVector>();
+                for (int j = 0; j < 4; j++)
+                {
+                    sampleData.Add(new GenericVector(r.Next(i-10, i), r.Next(i-10, i)));
+                }
+                clusters[clus++] = sampleData;
+            }
+            
+            var kNearest = new KnearestClassification(clusters, 3);
+            Assert.Equal(2, kNearest.ClassifyPoint(samplePoint));
         }
     }
 }

@@ -8,8 +8,12 @@ namespace DataTools
         public bool Noise { get; set; }
         public GenericVector Vector { get; }
 
-        public int Cluster { get; set; } = -1;
+        public int Cluster { get; set; }
 
-        public ClusterPoint(GenericVector vector) => Vector = vector;
+        public ClusterPoint(GenericVector vector, int cluster = -1)
+        {
+            Vector = vector;
+            Cluster = cluster;
+        } 
     }
 }

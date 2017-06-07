@@ -50,10 +50,7 @@ namespace WebApplication.Controllers
             }
 
             var data = new Dataset(gradedStudents.Select(x => x.ToGenericVector(dataA, dataB)));
-            var k = KDTree.OfList(data, data.Dimensions);
-            Console.WriteLine(k.Value);
-            Console.WriteLine(k.Right.Value);
-            Console.WriteLine(k.Right.Right.Value);
+           
 
             if (kmeans)
             {

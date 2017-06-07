@@ -9,7 +9,7 @@
 
 //TODO: make matrix class for floats
 
-namespace Matrix
+namespace DataTools
 {
     public static class MatrixUtils
     {

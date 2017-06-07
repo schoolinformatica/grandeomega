@@ -1,5 +1,5 @@
 
-namespace Utilities
+namespace DataTools.utils
 {
     public static class Utils
     {

@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Data;
-using Matrix;
 
 namespace DataTools.regression
 {
@@ -61,7 +60,7 @@ namespace DataTools.regression
 
         private void ComputerMatrixCoefficients()
         {
-            var inverseMatrixPoints = Matrix.MatrixUtils.MatrixInverse(_matrixPoints);
+            var inverseMatrixPoints = MatrixUtils.MatrixInverse(_matrixPoints);
 
             for (int i = 0; i < inverseMatrixPoints.Length; i++)
             {
