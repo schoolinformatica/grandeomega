@@ -13,8 +13,6 @@ namespace Regression
 
         public double PearsonCorrelation => PearsonCofficient();
         public double SpearmanCorrelation => SpearmanCofficient();
-        public double Slope => GetSlope();
-        public double YIntercept => Mean(_sampleB) - (Slope * Mean(_sampleA));
 
         public SimpleRegression(IEnumerable<GenericVector> data)
         {
@@ -26,17 +24,6 @@ namespace Regression
                 _sampleA.Add(vector[0]);
                 _sampleB.Add(vector[1]);
             }
-        }
-
-        public IEnumerable<GenericVector> GetLinearRegression()
-        {
-            var xL = _sampleA.Min();
-            var yL = (float) (Slope * xL + YIntercept);
-            var xR = _sampleA.Max();
-            var yR = (float) (Slope * xR + YIntercept);
-            var vectors = new List<GenericVector> {new GenericVector(xL, yL), new GenericVector(xR, yR)};
-
-            return vectors;
         }
 
         private double PearsonCofficient()
@@ -63,7 +50,6 @@ namespace Regression
                               (sumYSquared - Math.Pow(sumY, 2) / sampleLength)));
         }
 
-        //TODO: Fix this, still some error within it
         private double SpearmanCofficient()
         {
             var rankingA = ComputeRanking(_sampleA);
@@ -79,23 +65,6 @@ namespace Regression
 
             return 1 - ((6 * sumDifferenceSquared + correctionFactor) / (length * (length * length - 1)));
         }
-
-        private double GetSlope()
-        {
-            var meanA = Mean(_sampleA);
-            var meanB = Mean(_sampleB);
-            var nominator = 0.0;
-            var denominator = 0.0;
-
-            for (var i = 0; i < _sampleA.Count(); i++)
-            {
-                nominator += (_sampleA.ElementAt(i) - meanA) * (_sampleB.ElementAt(i) - meanB);
-                denominator += Math.Pow(_sampleA.ElementAt(i) - meanA, 2);
-            }
-
-            return nominator / denominator;
-        }
-
 
         /* Computes the correction factor of ranked data. This is because
          * when there are ties in the data, the spearmans rank correlation
@@ -154,13 +123,13 @@ namespace Regression
             return ranking;
         }
 
-        private static double StandardDeviation(IEnumerable<double> sample)
-        {
-            var meanSample = Mean(sample);
-            var sampleSize = sample.Count();
-
-            return sample.Select(x => Math.Pow(x - meanSample, 2)).Sum() / sampleSize;
-        }
+//        private static double StandardDeviation(IEnumerable<double> sample)
+//        {
+//            var meanSample = Mean(sample);
+//            var sampleSize = sample.Count();
+//
+//            return sample.Select(x => Math.Pow(x - meanSample, 2)).Sum() / sampleSize;
+//        }
 
         private static double Mean(IEnumerable<double> sample) => sample.Sum() / sample.Count();
     }

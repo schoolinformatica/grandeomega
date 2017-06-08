@@ -80,17 +80,17 @@ namespace WebApplication.Controllers
 
             if (simpleregression)
             {
-                var regression = new SimpleRegression(data);
-                var dataSer = new DataSeries(Highchart.Regression, new Dataset(regression.GetLinearRegression()),
+                var regression = new LinearRegression(data.Select(x => x.ToVector2()));
+                var dataSer = new DataSeries(Highchart.Regression, new Dataset(regression.GetLinearRegressionLine()),
                     "Regression Line");
                 dataSer.SetMarker(false);
                 dataSeries.Add(dataSer);
-                chart.SetSubtitle(
-                    $"Pearson: {regression.PearsonCorrelation} Spearman: {regression.SpearmanCorrelation}");
+//                chart.SetSubtitle(
+//                    $"Pearson: {regression.PearsonCorrelation} Spearman: {regression.SpearmanCorrelation}");
             }
 
             //if (polynomialregression)
-            if (true)
+            if (false)
             {
                 var vector2List = data.Select(x => x.ToVector2());
                 var regression = new PolynomialRegression(vector2List, 5);
