@@ -1,6 +1,4 @@
-using Data;
-
-namespace DataTools
+namespace DataTools.clustering
 {
     public class ClusterPoint
     {

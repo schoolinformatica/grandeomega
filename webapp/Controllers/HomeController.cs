@@ -1,14 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Clustering;
-using Data;
-using DataTools.classification;
+using DataTools;
+using DataTools.clustering;
+using DataTools.correlation;
 using DataTools.regression;
 using Highcharts;
 using models;
 using Microsoft.AspNetCore.Mvc;
-using Regression;
 using webapp.wwwroot.scripts;
 
 namespace WebApplication.Controllers
@@ -50,7 +49,7 @@ namespace WebApplication.Controllers
             }
 
             var data = new Dataset(gradedStudents.Select(x => x.ToGenericVector(dataA, dataB)));
-           
+
 
             if (kmeans)
             {
@@ -80,13 +79,17 @@ namespace WebApplication.Controllers
 
             if (simpleregression)
             {
+                var pearson = new PearsonCorrelation(data.Select(x => x.ToVector2()));
+                var spearman = new SpearmanCorrelation(data.Select(x => x.ToVector2()));
                 var regression = new LinearRegression(data.Select(x => x.ToVector2()));
                 var dataSer = new DataSeries(Highchart.Regression, new Dataset(regression.GetLinearRegressionLine()),
                     "Regression Line");
+                
                 dataSer.SetMarker(false);
                 dataSeries.Add(dataSer);
-//                chart.SetSubtitle(
-//                    $"Pearson: {regression.PearsonCorrelation} Spearman: {regression.SpearmanCorrelation}");
+                
+                chart.SetSubtitle(
+                    $"Pearson: {pearson.GetCorrelationCoefficient()} Spearman: {spearman.GetCorrelationCoefficient()}");
             }
 
             //if (polynomialregression)
@@ -97,7 +100,7 @@ namespace WebApplication.Controllers
                 var dataSer = new DataSeries(Highchart.Regression,
                     new Dataset(regression.GetPolynomialPoints().OrderBy(x => x[0])),
                     "Regression Line");
-                
+
                 dataSer.SetMarker(false);
                 dataSeries.Add(dataSer);
             }

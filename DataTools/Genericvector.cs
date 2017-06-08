@@ -1,10 +1,7 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http.Headers;
-using DataTools;
 
-namespace Data
+namespace DataTools
 
 {
     public class GenericVector
@@ -19,9 +16,11 @@ namespace Data
         public GenericVector(int size) => _points = new double[size];
         public GenericVector(params double[] args) => _points = args;
 
+
         public double[] ToArray() => _points;
 
         public double this[int x] => _points[x];
+
 
         public override string ToString()
         {
@@ -32,16 +31,17 @@ namespace Data
         {
             return new Vector2(_points[indexOne], _points[indexTwo]);
         }
-        
+
+
         public static GenericVector Sum(GenericVector a, GenericVector b)
         {
             if (a.Size != b.Size)
                 throw new Exception("GenericVector size of vectorToSum not equal to instance vector size");
-            
+
             var aArray = a.ToArray();
             var bArray = b.ToArray();
 
-            return new GenericVector(aArray.Zip(bArray, (x,y) => x + y).ToArray());
+            return new GenericVector(aArray.Zip(bArray, (x, y) => x + y).ToArray());
         }
 
         public static GenericVector Devide(GenericVector a, int devider)
