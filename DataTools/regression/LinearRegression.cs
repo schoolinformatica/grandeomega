@@ -14,7 +14,7 @@ namespace DataTools.regression
      *
      ******************************************************/
     
-    public class LinearRegression
+    public class LinearRegression : Regression
     {
         private readonly IEnumerable<Vector2> _data;
         
@@ -30,8 +30,13 @@ namespace DataTools.regression
             MeanX = Mean(_data.Select(vector => vector.X));
             MeanY = Mean(_data.Select(vector => vector.Y));
         }
+        
+        public override IEnumerable<GenericVector> GetRegressionLine()
+        {
+            return GetLinearRegressionLine();
+        }
 
-        public IEnumerable<GenericVector> GetLinearRegressionLine()
+        private IEnumerable<GenericVector> GetLinearRegressionLine()
         {
             var xL = _data.Select(vector => vector.X).Min();
             var yL = (float) (Slope * xL + YIntercept);

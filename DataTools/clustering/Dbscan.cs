@@ -15,13 +15,11 @@ namespace DataTools.clustering
      ******************************************************/
     
 
-    public class Dbscan
+    public class Dbscan : Clustering
     {
         private readonly float _radius;
         private readonly int _minPoints;
         private readonly List<ClusterPoint> _dataSet;
-
-        public Dictionary<int, IEnumerable<GenericVector>> DataClusters { get; }
 
         public Dbscan(float eps, int minPoints, IEnumerable<GenericVector> data)
         {

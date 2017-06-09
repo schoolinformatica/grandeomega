@@ -24,20 +24,19 @@ namespace DataTools.classification
      ******************************************************/
 
 
-    public class KnearestClassification
+    public class KnearestClassification : Classification
     {
-        private readonly Dictionary<int, IEnumerable<GenericVector>> _trainingData;
         private readonly int _k;
 
 
-        public KnearestClassification(Dictionary<int, IEnumerable<GenericVector>> traingingData, int k)
+        public KnearestClassification(Dictionary<int, IEnumerable<GenericVector>> traingingData, int k) :
+            base(traingingData)
         {
-            _trainingData = traingingData;
             _k = k;
         }
 
 
-        public int ClassifyPoint(GenericVector point)
+        public override int ClassifyPoint(GenericVector point)
         {
             var nearestPoints = new PriorityQue<ClusterPoint>();
 

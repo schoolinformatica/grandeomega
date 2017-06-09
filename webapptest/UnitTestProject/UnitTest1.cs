@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using DataTools;
 using DataTools.classification;
+using DataTools.correlation;
 using DataTools.regression;
-using Regression;
 using Xunit;
 
 namespace UnitTestProject
@@ -19,8 +19,8 @@ namespace UnitTestProject
             {
                 sampleVectors.Add(new GenericVector(i, i + 5));
             }
-            var regression = new SimpleRegression(sampleVectors);
-            Assert.Equal(1, regression.PearsonCorrelation);
+            var correlation = new PearsonCorrelation(sampleVectors.Select(x => x.ToVector2()));
+            Assert.Equal(1, correlation.GetCorrelationCoefficient());
         }
 
         [Fact]
@@ -31,8 +31,8 @@ namespace UnitTestProject
             {
                 sampleVectors.Add(new GenericVector(i, i + 5));
             }
-            var regression = new SimpleRegression(sampleVectors);
-            Assert.Equal(1, regression.SpearmanCorrelation);
+            var correlation = new SpearmanCorrelation(sampleVectors.Select(x => x.ToVector2()));
+            Assert.Equal(1, correlation.GetCorrelationCoefficient());
         }
 
         [Fact]
@@ -60,7 +60,7 @@ namespace UnitTestProject
                 vectors.Add(new GenericVector(i, a * i + b));
             }
             
-            var regression = new SimpleRegression(vectors);
+            var regression = new LinearRegression(vectors.Select(x => x.ToVector2()));
             var slope = regression.Slope;
             var intercept = regression.YIntercept;
             Assert.Equal(a, slope);

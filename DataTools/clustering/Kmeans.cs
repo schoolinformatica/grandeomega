@@ -15,15 +15,13 @@ namespace DataTools.clustering
      ******************************************************/
 
 
-    public class Kmeans
+    public class Kmeans : Clustering
     {
         private readonly Random _random = new Random();
         private readonly int _clusters;
         private readonly int _iterations;
         private readonly List<ClusterPoint> _dataSet;
         private Dictionary<int, GenericVector> _centroids;
-
-        public Dictionary<int, IEnumerable<GenericVector>> DataClusters { get; }
 
         public Kmeans(int k, int iterations, IEnumerable<GenericVector> dataSet)
         {

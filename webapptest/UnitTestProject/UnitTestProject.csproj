@@ -16,10 +16,6 @@
       <Project>{40a7ca73-52f4-4881-8f0e-c97816e7e96b}</Project>
       <Name>Highcharts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\KdTree\KdTree.csproj">
-      <Project>{ac532b31-b1ec-497c-aa97-61d44b9b529d}</Project>
-      <Name>KdTree</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\webapp\webapp.csproj">
       <Project>{f7f7e630-9c22-4256-91ee-df958fd6ead8}</Project>
       <Name>webapp</Name>

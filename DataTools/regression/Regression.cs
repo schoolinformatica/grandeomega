@@ -1,7 +1,9 @@
+using System.Collections.Generic;
+
 namespace DataTools.regression
 {
-    public class Regression
+    public abstract class Regression
     {
-        
+        public abstract IEnumerable<GenericVector> GetRegressionLine();
     }
 }

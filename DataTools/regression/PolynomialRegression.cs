@@ -12,7 +12,7 @@ namespace DataTools.regression
      *
      ******************************************************/
     
-    public class PolynomialRegression
+    public class PolynomialRegression : Regression
     {
         private readonly double[][] _matrixPoints;
         private readonly double[] _matrixCoefficients;
@@ -40,8 +40,13 @@ namespace DataTools.regression
         {
             return ComputePolynomialPointY(x);
         }
+        
+        public override IEnumerable<GenericVector> GetRegressionLine()
+        {
+            return GetPolynomialPoints().OrderBy(x => x[0]);
+        }
 
-        public GenericVector[] GetPolynomialPoints()
+        private GenericVector[] GetPolynomialPoints()
         {
             var polyPoints = new GenericVector[_data.Length];
 
@@ -130,5 +135,6 @@ namespace DataTools.regression
 
             return _sigmaDegreeCache[degree];
         }
+
     }
 }

@@ -28,8 +28,9 @@ namespace WebApplication.Controllers
             
             if (classifyungraded)
             {
+                Console.WriteLine($"students graded {gradedStudents.Count}");
                 var grades = new Dictionary<int, double>();
-                var clusters = new Dbscan(50, 3,
+                var clusters = new Dbscan(210, 3,
                     Students.StudentsGraded.Select(x => x.ToGenericVector(Stud.Attempts, Stud.Class, Stud.FailRatio,
                         Stud.Fails, Stud.Succeeds, Stud.SuccessRatio, Stud.Grade)));
 
@@ -39,7 +40,7 @@ namespace WebApplication.Controllers
                     Console.WriteLine($"Average grade: {grades[cluster.Key]}");
                 }
 
-                var classification = new KnearestClassification(clusters.DataClusters, 4);
+                var classification = new NaiveBayesClassification(clusters.DataClusters, 50000);
                 foreach (var student in Students.StudentsUngraded)
                 {
                     var cluster = classification.ClassifyPoint(student.ToGenericVector(Stud.Attempts, Stud.Class,
