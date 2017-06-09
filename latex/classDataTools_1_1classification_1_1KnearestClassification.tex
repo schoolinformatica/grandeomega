@@ -1,0 +1,84 @@
+\hypertarget{classDataTools_1_1classification_1_1KnearestClassification}{}\subsection{Knearest\+Classification Class Reference}
+\label{classDataTools_1_1classification_1_1KnearestClassification}\index{Knearest\+Classification@{Knearest\+Classification}}
+
+
+Classification algorithm using K Nearest.  
+
+
+\subsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDataTools_1_1classification_1_1KnearestClassification_a588873a311daa525f0bdf6663b1d5eef_a588873a311daa525f0bdf6663b1d5eef}{Knearest\+Classification} (Dictionary$<$ int, I\+Enumerable$<$ \hyperlink{classDataTools_1_1GenericVector}{Generic\+Vector} $>$$>$ trainging\+Data, int k)
+\item 
+int \hyperlink{classDataTools_1_1classification_1_1KnearestClassification_a1c75b6bb19251c5c39a7bfe67a1a2b1f_a1c75b6bb19251c5c39a7bfe67a1a2b1f}{Classify\+Point} (\hyperlink{classDataTools_1_1GenericVector}{Generic\+Vector} point)
+\end{DoxyCompactItemize}
+\subsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{classDataTools_1_1classification_1_1KnearestClassification_a6e263b4b9b6b29c78e2f5874c659f9b5_a6e263b4b9b6b29c78e2f5874c659f9b5}{Get\+Biggest\+Cluster} (\hyperlink{classDataTools_1_1utils_1_1PriorityQue}{Priority\+Que}$<$ \hyperlink{classDataTools_1_1clustering_1_1ClusterPoint}{Cluster\+Point} $>$ nearest\+Points)
+\end{DoxyCompactItemize}
+\subsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDataTools_1_1classification_1_1KnearestClassification_af3b7ff0a4c49492be5b79482895d189c}\label{classDataTools_1_1classification_1_1KnearestClassification_af3b7ff0a4c49492be5b79482895d189c}} 
+readonly Dictionary$<$ int, I\+Enumerable$<$ \hyperlink{classDataTools_1_1GenericVector}{Generic\+Vector} $>$ $>$ {\bfseries \+\_\+training\+Data}
+\item 
+\mbox{\Hypertarget{classDataTools_1_1classification_1_1KnearestClassification_afc00c9b3229a9d2954b24471e6a7debc}\label{classDataTools_1_1classification_1_1KnearestClassification_afc00c9b3229a9d2954b24471e6a7debc}} 
+readonly int {\bfseries \+\_\+k}
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Detailed Description}
+Classification algorithm using K Nearest. 
+
+K Nearest is a classification algorithm that uses a training set in order te classify new points. To do so, K Nearest computes the distance from the new point to all the points in the training set. With a time complexity of {\ttfamily O(m$\ast$n)} where {\ttfamily n} is the length of the training set and {\ttfamily m} is the length of the set of new points, this a C\+PU heavy operation.
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000001}{Todo}]In order de reduce the time complexity, a KD Tree could be implemented. Searching a KD Tree for nearest neighbours has a time complexity of {\ttfamily O(log n)} \end{DoxyRefDesc}
+
+
+\subsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDataTools_1_1classification_1_1KnearestClassification_a588873a311daa525f0bdf6663b1d5eef_a588873a311daa525f0bdf6663b1d5eef}\label{classDataTools_1_1classification_1_1KnearestClassification_a588873a311daa525f0bdf6663b1d5eef_a588873a311daa525f0bdf6663b1d5eef}} 
+\index{Data\+Tools\+::classification\+::\+Knearest\+Classification@{Data\+Tools\+::classification\+::\+Knearest\+Classification}!Knearest\+Classification@{Knearest\+Classification}}
+\index{Knearest\+Classification@{Knearest\+Classification}!Data\+Tools\+::classification\+::\+Knearest\+Classification@{Data\+Tools\+::classification\+::\+Knearest\+Classification}}
+\paragraph{\texorpdfstring{Knearest\+Classification()}{KnearestClassification()}}
+{\footnotesize\ttfamily \hyperlink{classDataTools_1_1classification_1_1KnearestClassification}{Knearest\+Classification} (\begin{DoxyParamCaption}\item[{Dictionary$<$ int, I\+Enumerable$<$ \hyperlink{classDataTools_1_1GenericVector}{Generic\+Vector} $>$$>$}]{trainging\+Data,  }\item[{int}]{k }\end{DoxyParamCaption})}
+
+Cunstructor for Knearest\+Classification 
+\begin{DoxyParams}{Parameters}
+{\em training\+Data} & Set of pre clustered data \\
+\hline
+{\em k} & Amount of neighbours a new point is verified with \\
+\hline
+\end{DoxyParams}
+
+
+\subsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDataTools_1_1classification_1_1KnearestClassification_a1c75b6bb19251c5c39a7bfe67a1a2b1f_a1c75b6bb19251c5c39a7bfe67a1a2b1f}\label{classDataTools_1_1classification_1_1KnearestClassification_a1c75b6bb19251c5c39a7bfe67a1a2b1f_a1c75b6bb19251c5c39a7bfe67a1a2b1f}} 
+\index{Data\+Tools\+::classification\+::\+Knearest\+Classification@{Data\+Tools\+::classification\+::\+Knearest\+Classification}!Classify\+Point@{Classify\+Point}}
+\index{Classify\+Point@{Classify\+Point}!Data\+Tools\+::classification\+::\+Knearest\+Classification@{Data\+Tools\+::classification\+::\+Knearest\+Classification}}
+\paragraph{\texorpdfstring{Classify\+Point()}{ClassifyPoint()}}
+{\footnotesize\ttfamily int Classify\+Point (\begin{DoxyParamCaption}\item[{\hyperlink{classDataTools_1_1GenericVector}{Generic\+Vector}}]{point }\end{DoxyParamCaption})}
+
+Classify a point 
+\begin{DoxyParams}{Parameters}
+{\em point} & Point to classify \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Cluster the point belongs to 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDataTools_1_1classification_1_1KnearestClassification_a6e263b4b9b6b29c78e2f5874c659f9b5_a6e263b4b9b6b29c78e2f5874c659f9b5}\label{classDataTools_1_1classification_1_1KnearestClassification_a6e263b4b9b6b29c78e2f5874c659f9b5_a6e263b4b9b6b29c78e2f5874c659f9b5}} 
+\index{Data\+Tools\+::classification\+::\+Knearest\+Classification@{Data\+Tools\+::classification\+::\+Knearest\+Classification}!Get\+Biggest\+Cluster@{Get\+Biggest\+Cluster}}
+\index{Get\+Biggest\+Cluster@{Get\+Biggest\+Cluster}!Data\+Tools\+::classification\+::\+Knearest\+Classification@{Data\+Tools\+::classification\+::\+Knearest\+Classification}}
+\paragraph{\texorpdfstring{Get\+Biggest\+Cluster()}{GetBiggestCluster()}}
+{\footnotesize\ttfamily static int Get\+Biggest\+Cluster (\begin{DoxyParamCaption}\item[{\hyperlink{classDataTools_1_1utils_1_1PriorityQue}{Priority\+Que}$<$ \hyperlink{classDataTools_1_1clustering_1_1ClusterPoint}{Cluster\+Point} $>$}]{nearest\+Points }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+Get the biggest cluster a que 
+\begin{DoxyParams}{Parameters}
+{\em nearest\+Points} & Points nearest to the classified point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Biggest cluster 
+\end{DoxyReturn}

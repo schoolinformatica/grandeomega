@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using Highcharts.templatengine;
 
 namespace Highcharts
 {
     public class DataSeries : ITmplModel
     {
-        //TODO: Make custom enum for template names
-        public string Template { get; } = "dataseries";
+        public TemplateFile Template { get; } = TemplateFile.Dataseries;
 
         private readonly Dictionary<Replacer, string> _replacers = new Dictionary<Replacer, string>();
 

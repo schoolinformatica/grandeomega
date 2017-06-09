@@ -2,6 +2,7 @@ using System.Collections.Generic;
 
 namespace DataTools.correlation
 {
+    
     public abstract class Correlation
     {
         protected readonly IEnumerable<Vector2> Data;
@@ -12,7 +13,6 @@ namespace DataTools.correlation
         }
 
         public abstract double GetCorrelationCoefficient();
-        
-        
+              
     }
 }

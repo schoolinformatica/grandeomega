@@ -3,6 +3,7 @@ using System.Reflection;
 
 namespace Highcharts
 {
+
     public class Resources
     {
         private static readonly Assembly Assembly = typeof(Highchart).GetTypeInfo().Assembly;

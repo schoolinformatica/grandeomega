@@ -1,16 +1,18 @@
 ﻿using System;
 
-/******************************************************
- *
- * All code is not mine. All credits to James D. McCraffey:
- * https://jamesmccaffrey.wordpress.com/2015/03/06/inverting-a-matrix-using-c/
- *
- ******************************************************/
-
-//TODO: make matrix class for floats
-
 namespace DataTools
 {
+    /*! \brief Utilities for Math algebra
+     *
+     *  !NOTE the code used in this class is written by
+     *  James D. McCraffey. All credites goes to him. More
+     *  info (https://jamesmccaffrey.wordpress.com/2015/03
+     *  /06/inverting-a-matrix-using-c/)
+     *
+     *  In this class are included several Matrix functions,
+     *  that supports the matrix inverse function. 
+     */
+    
     public static class MatrixUtils
     {
         public static double[][] MatrixInverse(double[][] matrix)
@@ -43,7 +45,7 @@ namespace DataTools
             }
             return result;
         }
-        
+
         private static double[][] MatrixDecompose(double[][] matrix, out int[] perm,
             out int toggle)
         {
@@ -57,10 +59,13 @@ namespace DataTools
 
             int n = rows; // convenience
 
-            double[][] result = MatrixDuplicate(matrix); 
+            double[][] result = MatrixDuplicate(matrix);
 
             perm = new int[n]; // set up row permutation result
-            for (int i = 0; i < n; ++i) { perm[i] = i; }
+            for (int i = 0; i < n; ++i)
+            {
+                perm[i] = i;
+            }
 
             toggle = 1; // toggle tracks row swaps.
             // +1 -greater-than even, -1 -greater-than odd. used by MatrixDeterminant
@@ -79,7 +84,7 @@ namespace DataTools
                 //}
 
                 // reader Matt V needed this:
-                for (int i = j + 1; i < n; ++i) 
+                for (int i = j + 1; i < n; ++i)
                 {
                     if (Math.Abs(result[i][j]) > colMax)
                     {
@@ -147,13 +152,11 @@ namespace DataTools
                         result[i][k] -= result[i][j] * result[j][k];
                     }
                 }
-
-
             } // main j column loop
 
             return result;
         } // MatrixDecompose
-        
+
         private static double[] HelperSolve(double[][] luMatrix, double[] b)
         {
             // before calling this helper, permute b using the perm array
@@ -181,7 +184,7 @@ namespace DataTools
 
             return x;
         }
-        
+
         public static double[][] MatrixCreate(int rows, int cols)
         {
             double[][] result = new double[rows][];
@@ -189,7 +192,7 @@ namespace DataTools
                 result[i] = new double[cols];
             return result;
         }
-        
+
         private static double[][] MatrixDuplicate(double[][] matrix)
         {
             // allocates/creates a duplicate of a matrix.

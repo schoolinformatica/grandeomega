@@ -1,17 +1,10 @@
-using System;
-using System.Collections.Generic;
-using DataTools.classification;
-
-namespace startup
+namespace webapp.wwwroot.scripts
 {
     public static class OnStartUp
     {
         public static void Init()
         {
-            Students.parseData();
-
+            Students.ParseData();
         }
-
-        
     }
 }

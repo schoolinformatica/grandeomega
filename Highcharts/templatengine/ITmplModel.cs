@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Highcharts
+namespace Highcharts.templatengine
 {
     public interface ITmplModel
     {
-        string Template { get; }
+        TemplateFile Template { get; }
 
         string CreateTemplate();
         List<Tuple<string, string>> GetReplacers();

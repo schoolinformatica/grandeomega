@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Highcharts.templatengine;
 
 namespace Highcharts
 {
@@ -7,8 +8,7 @@ namespace Highcharts
     {
         private readonly Dictionary<Replacer, string> _replacers = new Dictionary<Replacer, string>();
 
-        //TODO: Make custom enum with templates
-        public string Template { get; } = "scatterplot";
+        public TemplateFile Template { get; } = TemplateFile.Chart;
 
         public Chart(Highchart chartType) => _replacers[Replacer.Chart] = chartType.Value;
 

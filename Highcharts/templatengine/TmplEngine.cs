@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Text;
+using Highcharts.templatengine;
 
 namespace Highcharts
 {
     public static class TmplEngine
     {
-        private const string Prefix = "Highcharts.Files.";
-        private const string FileExtension = ".tmpl";
         private const string LeftToken = "<%";
         private const string RightToken = "%>";
 
@@ -17,10 +16,10 @@ namespace Highcharts
         {
             string bodyFile;
             
-            var template = Prefix + model.Template + FileExtension;
+            var template = model.Template.Value;
             var replacers = model.GetReplacers();
-
-            using (var reader = new StreamReader(Resources.LoadFile(template)))
+            var r = Resources.LoadFile(template);
+            using (var reader = new StreamReader(r))
             {
                 bodyFile = reader.ReadToEnd();
 

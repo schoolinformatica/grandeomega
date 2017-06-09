@@ -1,0 +1,66 @@
+\indexentry{Data\+Tools@{Data\+Tools}|hyperpage}{4}
+\indexentry{Data\+Tools.\+classification@{Data\+Tools.\+classification}|hyperpage}{5}
+\indexentry{Data\+Tools.\+clustering@{Data\+Tools.\+clustering}|hyperpage}{5}
+\indexentry{Data\+Tools.\+correlation@{Data\+Tools.\+correlation}|hyperpage}{5}
+\indexentry{Data\+Tools.\+regression@{Data\+Tools.\+regression}|hyperpage}{5}
+\indexentry{Data\+Tools.\+utils@{Data\+Tools.\+utils}|hyperpage}{5}
+\indexentry{Highcharts@{Highcharts}|hyperpage}{6}
+\indexentry{Tree@{Tree}|hyperpage}{6}
+\indexentry{Chart@{Chart}|hyperpage}{6}
+\indexentry{Cluster\+Point@{Cluster\+Point}|hyperpage}{7}
+\indexentry{Data\+Tools\+::clustering\+::\+Cluster\+Point@{Data\+Tools\+::clustering\+::\+Cluster\+Point}!Cluster\+Point@{Cluster\+Point}|hyperpage}{7}
+\indexentry{Cluster\+Point@{Cluster\+Point}!Data\+Tools\+::clustering\+::\+Cluster\+Point@{Data\+Tools\+::clustering\+::\+Cluster\+Point}|hyperpage}{7}
+\indexentry{Correlation@{Correlation}|hyperpage}{8}
+\indexentry{Data\+Series@{Data\+Series}|hyperpage}{8}
+\indexentry{Dbscan@{Dbscan}|hyperpage}{9}
+\indexentry{Data\+Tools\+::clustering\+::\+Dbscan@{Data\+Tools\+::clustering\+::\+Dbscan}!Dbscan@{Dbscan}|hyperpage}{9}
+\indexentry{Dbscan@{Dbscan}!Data\+Tools\+::clustering\+::\+Dbscan@{Data\+Tools\+::clustering\+::\+Dbscan}|hyperpage}{9}
+\indexentry{Data\+Tools\+::clustering\+::\+Dbscan@{Data\+Tools\+::clustering\+::\+Dbscan}!Expand\+Cluster@{Expand\+Cluster}|hyperpage}{10}
+\indexentry{Expand\+Cluster@{Expand\+Cluster}!Data\+Tools\+::clustering\+::\+Dbscan@{Data\+Tools\+::clustering\+::\+Dbscan}|hyperpage}{10}
+\indexentry{Data\+Tools\+::clustering\+::\+Dbscan@{Data\+Tools\+::clustering\+::\+Dbscan}!Region\+Query@{Region\+Query}|hyperpage}{10}
+\indexentry{Region\+Query@{Region\+Query}!Data\+Tools\+::clustering\+::\+Dbscan@{Data\+Tools\+::clustering\+::\+Dbscan}|hyperpage}{10}
+\indexentry{Data\+Tools\+::clustering\+::\+Dbscan@{Data\+Tools\+::clustering\+::\+Dbscan}!Run@{Run}|hyperpage}{10}
+\indexentry{Run@{Run}!Data\+Tools\+::clustering\+::\+Dbscan@{Data\+Tools\+::clustering\+::\+Dbscan}|hyperpage}{10}
+\indexentry{Empty$<$ T $>$@{Empty$<$ T $>$}|hyperpage}{11}
+\indexentry{Generic\+Vector@{Generic\+Vector}|hyperpage}{11}
+\indexentry{Highchart@{Highchart}|hyperpage}{12}
+\indexentry{I\+Charts\+List@{I\+Charts\+List}|hyperpage}{12}
+\indexentry{I\+Tmpl\+Model@{I\+Tmpl\+Model}|hyperpage}{12}
+\indexentry{I\+Tree$<$ T $>$@{I\+Tree$<$ T $>$}|hyperpage}{13}
+\indexentry{Kd\+Tree$<$ T $>$@{Kd\+Tree$<$ T $>$}|hyperpage}{13}
+\indexentry{Kmeans@{Kmeans}|hyperpage}{13}
+\indexentry{Data\+Tools\+::clustering\+::\+Kmeans@{Data\+Tools\+::clustering\+::\+Kmeans}!Kmeans@{Kmeans}|hyperpage}{14}
+\indexentry{Kmeans@{Kmeans}!Data\+Tools\+::clustering\+::\+Kmeans@{Data\+Tools\+::clustering\+::\+Kmeans}|hyperpage}{14}
+\indexentry{Data\+Tools\+::clustering\+::\+Kmeans@{Data\+Tools\+::clustering\+::\+Kmeans}!Generate\+Random\+Centroids@{Generate\+Random\+Centroids}|hyperpage}{15}
+\indexentry{Generate\+Random\+Centroids@{Generate\+Random\+Centroids}!Data\+Tools\+::clustering\+::\+Kmeans@{Data\+Tools\+::clustering\+::\+Kmeans}|hyperpage}{15}
+\indexentry{Data\+Tools\+::clustering\+::\+Kmeans@{Data\+Tools\+::clustering\+::\+Kmeans}!Get\+Nearest\+Cluster@{Get\+Nearest\+Cluster}|hyperpage}{15}
+\indexentry{Get\+Nearest\+Cluster@{Get\+Nearest\+Cluster}!Data\+Tools\+::clustering\+::\+Kmeans@{Data\+Tools\+::clustering\+::\+Kmeans}|hyperpage}{15}
+\indexentry{Data\+Tools\+::clustering\+::\+Kmeans@{Data\+Tools\+::clustering\+::\+Kmeans}!Get\+Random\+Vector@{Get\+Random\+Vector}|hyperpage}{15}
+\indexentry{Get\+Random\+Vector@{Get\+Random\+Vector}!Data\+Tools\+::clustering\+::\+Kmeans@{Data\+Tools\+::clustering\+::\+Kmeans}|hyperpage}{15}
+\indexentry{Data\+Tools\+::clustering\+::\+Kmeans@{Data\+Tools\+::clustering\+::\+Kmeans}!Is\+Changed\+Cluster@{Is\+Changed\+Cluster}|hyperpage}{15}
+\indexentry{Is\+Changed\+Cluster@{Is\+Changed\+Cluster}!Data\+Tools\+::clustering\+::\+Kmeans@{Data\+Tools\+::clustering\+::\+Kmeans}|hyperpage}{15}
+\indexentry{Data\+Tools\+::clustering\+::\+Kmeans@{Data\+Tools\+::clustering\+::\+Kmeans}!Recalculate\+Centroids@{Recalculate\+Centroids}|hyperpage}{16}
+\indexentry{Recalculate\+Centroids@{Recalculate\+Centroids}!Data\+Tools\+::clustering\+::\+Kmeans@{Data\+Tools\+::clustering\+::\+Kmeans}|hyperpage}{16}
+\indexentry{Data\+Tools\+::clustering\+::\+Kmeans@{Data\+Tools\+::clustering\+::\+Kmeans}!Recalculate\+Clusters@{Recalculate\+Clusters}|hyperpage}{16}
+\indexentry{Recalculate\+Clusters@{Recalculate\+Clusters}!Data\+Tools\+::clustering\+::\+Kmeans@{Data\+Tools\+::clustering\+::\+Kmeans}|hyperpage}{16}
+\indexentry{Data\+Tools\+::clustering\+::\+Kmeans@{Data\+Tools\+::clustering\+::\+Kmeans}!Run@{Run}|hyperpage}{16}
+\indexentry{Run@{Run}!Data\+Tools\+::clustering\+::\+Kmeans@{Data\+Tools\+::clustering\+::\+Kmeans}|hyperpage}{16}
+\indexentry{Knearest\+Classification@{Knearest\+Classification}|hyperpage}{16}
+\indexentry{Data\+Tools\+::classification\+::\+Knearest\+Classification@{Data\+Tools\+::classification\+::\+Knearest\+Classification}!Knearest\+Classification@{Knearest\+Classification}|hyperpage}{17}
+\indexentry{Knearest\+Classification@{Knearest\+Classification}!Data\+Tools\+::classification\+::\+Knearest\+Classification@{Data\+Tools\+::classification\+::\+Knearest\+Classification}|hyperpage}{17}
+\indexentry{Data\+Tools\+::classification\+::\+Knearest\+Classification@{Data\+Tools\+::classification\+::\+Knearest\+Classification}!Classify\+Point@{Classify\+Point}|hyperpage}{17}
+\indexentry{Classify\+Point@{Classify\+Point}!Data\+Tools\+::classification\+::\+Knearest\+Classification@{Data\+Tools\+::classification\+::\+Knearest\+Classification}|hyperpage}{17}
+\indexentry{Data\+Tools\+::classification\+::\+Knearest\+Classification@{Data\+Tools\+::classification\+::\+Knearest\+Classification}!Get\+Biggest\+Cluster@{Get\+Biggest\+Cluster}|hyperpage}{18}
+\indexentry{Get\+Biggest\+Cluster@{Get\+Biggest\+Cluster}!Data\+Tools\+::classification\+::\+Knearest\+Classification@{Data\+Tools\+::classification\+::\+Knearest\+Classification}|hyperpage}{18}
+\indexentry{Linear\+Regression@{Linear\+Regression}|hyperpage}{18}
+\indexentry{Matrix\+Utils@{Matrix\+Utils}|hyperpage}{19}
+\indexentry{Pearson\+Correlation@{Pearson\+Correlation}|hyperpage}{19}
+\indexentry{Polynomial\+Regression@{Polynomial\+Regression}|hyperpage}{20}
+\indexentry{Priority\+Que$<$ T $>$@{Priority\+Que$<$ T $>$}|hyperpage}{20}
+\indexentry{Que\+Item$<$ T $>$@{Que\+Item$<$ T $>$}|hyperpage}{21}
+\indexentry{Replacer@{Replacer}|hyperpage}{21}
+\indexentry{Resources@{Resources}|hyperpage}{21}
+\indexentry{Spearman\+Correlation@{Spearman\+Correlation}|hyperpage}{22}
+\indexentry{Tmpl\+Engine@{Tmpl\+Engine}|hyperpage}{22}
+\indexentry{Utils@{Utils}|hyperpage}{23}
+\indexentry{Vector2@{Vector2}|hyperpage}{23}

@@ -1,0 +1,42 @@
+\contentsline {section}{\numberline {1}Todo List}{1}{section.1}
+\contentsline {section}{\numberline {2}Namespace Index}{1}{section.2}
+\contentsline {subsection}{\numberline {2.1}Namespace List}{1}{subsection.2.1}
+\contentsline {section}{\numberline {3}Hierarchical Index}{2}{section.3}
+\contentsline {subsection}{\numberline {3.1}Class Hierarchy}{2}{subsection.3.1}
+\contentsline {section}{\numberline {4}Class Index}{2}{section.4}
+\contentsline {subsection}{\numberline {4.1}Class List}{2}{subsection.4.1}
+\contentsline {section}{\numberline {5}Namespace Documentation}{3}{section.5}
+\contentsline {subsection}{\numberline {5.1}Data\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Tools Namespace Reference}{3}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Data\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Tools.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}classification Namespace Reference}{3}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Data\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Tools.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}clustering Namespace Reference}{3}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}Data\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Tools.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}correlation Namespace Reference}{4}{subsection.5.4}
+\contentsline {subsection}{\numberline {5.5}Data\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Tools.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}regression Namespace Reference}{4}{subsection.5.5}
+\contentsline {subsection}{\numberline {5.6}Data\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Tools.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}utils Namespace Reference}{4}{subsection.5.6}
+\contentsline {subsection}{\numberline {5.7}Smoothing Namespace Reference}{4}{subsection.5.7}
+\contentsline {section}{\numberline {6}Class Documentation}{4}{section.6}
+\contentsline {subsection}{\numberline {6.1}Correlation Class Reference}{4}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Dbscan Class Reference}{5}{subsection.6.2}
+\contentsline {subsubsection}{\numberline {6.2.1}Detailed Description}{5}{subsubsection.6.2.1}
+\contentsline {subsubsection}{\numberline {6.2.2}Constructor \& Destructor Documentation}{5}{subsubsection.6.2.2}
+\contentsline {paragraph}{\numberline {6.2.2.1}Dbscan()}{5}{paragraph.6.2.2.1}
+\contentsline {subsection}{\numberline {6.3}D\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}ES Class Reference}{6}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}Generic\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Vector Class Reference}{6}{subsection.6.4}
+\contentsline {subsubsection}{\numberline {6.4.1}Detailed Description}{6}{subsubsection.6.4.1}
+\contentsline {subsection}{\numberline {6.5}Kmeans Class Reference}{6}{subsection.6.5}
+\contentsline {subsubsection}{\numberline {6.5.1}Detailed Description}{7}{subsubsection.6.5.1}
+\contentsline {subsubsection}{\numberline {6.5.2}Constructor \& Destructor Documentation}{7}{subsubsection.6.5.2}
+\contentsline {paragraph}{\numberline {6.5.2.1}Kmeans()}{7}{paragraph.6.5.2.1}
+\contentsline {subsection}{\numberline {6.6}Knearest\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Classification Class Reference}{7}{subsection.6.6}
+\contentsline {subsubsection}{\numberline {6.6.1}Detailed Description}{7}{subsubsection.6.6.1}
+\contentsline {subsection}{\numberline {6.7}Linear\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Regression Class Reference}{8}{subsection.6.7}
+\contentsline {subsection}{\numberline {6.8}Matrix\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Utils Class Reference}{8}{subsection.6.8}
+\contentsline {subsubsection}{\numberline {6.8.1}Detailed Description}{8}{subsubsection.6.8.1}
+\contentsline {subsection}{\numberline {6.9}Pearson\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Correlation Class Reference}{8}{subsection.6.9}
+\contentsline {subsection}{\numberline {6.10}Polynomial\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Regression Class Reference}{9}{subsection.6.10}
+\contentsline {subsection}{\numberline {6.11}Priority\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Que$<$ T $>$ Class Template Reference}{9}{subsection.6.11}
+\contentsline {subsection}{\numberline {6.12}Que\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Item$<$ T $>$ Class Template Reference}{9}{subsection.6.12}
+\contentsline {subsection}{\numberline {6.13}Spearman\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Correlation Class Reference}{9}{subsection.6.13}
+\contentsline {subsection}{\numberline {6.14}Utils Class Reference}{10}{subsection.6.14}
+\contentsline {subsection}{\numberline {6.15}Vector2 Class Reference}{10}{subsection.6.15}
+\contentsline {subsubsection}{\numberline {6.15.1}Detailed Description}{10}{subsubsection.6.15.1}
+\contentsline {section}{Index}{11}{section*.40}

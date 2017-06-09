@@ -2,12 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using DataTools;
+using DataTools.classification;
 using DataTools.clustering;
 using DataTools.correlation;
 using DataTools.regression;
 using Highcharts;
-using models;
 using Microsoft.AspNetCore.Mvc;
+using webapp.wwwroot.models;
 using webapp.wwwroot.scripts;
 
 namespace WebApplication.Controllers
@@ -19,30 +20,36 @@ namespace WebApplication.Controllers
             return View();
         }
 
-        //TODO: Add div tag to params, make enums of options
         [HttpPost]
-        public string CreateGraph(Stud dataA, Stud dataB, bool kmeans, bool dbscan, bool simpleregression,
-            bool polynomialregression)
+        public string CreateGraph(Stud dataA, Stud dataB, bool kmeans, bool dbscan, bool linearregression,
+            bool polynomialregression, bool pearsoncorrelation, bool spearmancorrelation, bool classifyungraded)
         {
-            var dataSeries = new List<DataSeries>();
-            var title = $"Plot of {dataA} vs {dataB}";
-            var chart = new Chart(Highchart.Scatterplot);
-
-            var r = new Random();
-            var samples = new List<GenericVector>();
-
-            for (int i = 0; i < 100; i++)
+            var gradedStudents = Students.StudentsGraded;
+            
+            if (classifyungraded)
             {
-                samples.Add(new GenericVector(r.Next(0, 100), r.Next(0, 100), r.Next(0, 100)));
+                var grades = new Dictionary<int, double>();
+                var clusters = new Dbscan(50, 3,
+                    Students.StudentsGraded.Select(x => x.ToGenericVector(Stud.Attempts, Stud.Class, Stud.FailRatio,
+                        Stud.Fails, Stud.Succeeds, Stud.SuccessRatio, Stud.Grade)));
+
+                foreach (var cluster in clusters.DataClusters)
+                {
+                    grades[cluster.Key] = cluster.Value.Sum(x => x[6]) / cluster.Value.Count();
+                    Console.WriteLine($"Average grade: {grades[cluster.Key]}");
+                }
+
+                var classification = new KnearestClassification(clusters.DataClusters, 4);
+                foreach (var student in Students.StudentsUngraded)
+                {
+                    var cluster = classification.ClassifyPoint(student.ToGenericVector(Stud.Attempts, Stud.Class,
+                        Stud.FailRatio, Stud.Fails, Stud.Succeeds, Stud.SuccessRatio, Stud.Grade));
+
+                    student.Grade = (int)grades[cluster];
+                    gradedStudents.Add(student);
+                }
             }
-
-
-            Console.WriteLine(
-                $" \nDataA {dataA}, DataB {dataB}, Kmeans {kmeans}, Dbscan {dbscan}, Simpleregression {simpleregression}\n");
-
-
-            var gradedStudents = Students.students.Where(x => x.Grade > 0);
-
+            
             foreach (var student in gradedStudents)
             {
                 student.Filter();
@@ -50,72 +57,46 @@ namespace WebApplication.Controllers
 
             var data = new Dataset(gradedStudents.Select(x => x.ToGenericVector(dataA, dataB)));
 
+            var highChart = new HighchartsAdapter(Highchart.Scatterplot);
 
-            if (kmeans)
-            {
-                var clustering = new Kmeans(4, 100, data);
+            
 
-                foreach (var cluster in clustering.DataClusters)
-                {
-                    var header = $"Cluster {cluster.Key}";
-                    dataSeries.Add(new DataSeries(Highchart.Scatterplot, new Dataset(cluster.Value), header));
-                }
-            }
-
+            //Dbscan removes outliers, so we have to change are dataset afterwards
             if (dbscan)
             {
-                var newDataset = new List<GenericVector>();
-                var db = new Dbscan(50, 3, data);
-
-                foreach (var cluster in db.DataClusters)
+                var newData = new List<GenericVector>();
+                var dBscan = new Dbscan(50, 3, data);
+                foreach (var cluster in dBscan.DataClusters)
                 {
-                    var header = $"Cluster {cluster.Key}";
-                    dataSeries.Add(new DataSeries(Highchart.Scatterplot, new Dataset(cluster.Value), header));
-                    newDataset.AddRange(cluster.Value);
+                    newData.AddRange(cluster.Value);
                 }
-
-                data = new Dataset(newDataset);
+                data = new Dataset(newData);
+                highChart.AddClusters(dBscan);
             }
 
-            if (simpleregression)
-            {
-                var pearson = new PearsonCorrelation(data.Select(x => x.ToVector2()));
-                var spearman = new SpearmanCorrelation(data.Select(x => x.ToVector2()));
-                var regression = new LinearRegression(data.Select(x => x.ToVector2()));
-                var dataSer = new DataSeries(Highchart.Regression, new Dataset(regression.GetLinearRegressionLine()),
-                    "Regression Line");
-                
-                dataSer.SetMarker(false);
-                dataSeries.Add(dataSer);
-                
-                chart.SetSubtitle(
-                    $"Pearson: {pearson.GetCorrelationCoefficient()} Spearman: {spearman.GetCorrelationCoefficient()}");
-            }
-
-            //if (polynomialregression)
-            if (false)
-            {
-                var vector2List = data.Select(x => x.ToVector2());
-                var regression = new PolynomialRegression(vector2List, 5);
-                var dataSer = new DataSeries(Highchart.Regression,
-                    new Dataset(regression.GetPolynomialPoints().OrderBy(x => x[0])),
-                    "Regression Line");
-
-                dataSer.SetMarker(false);
-                dataSeries.Add(dataSer);
-            }
+            if (kmeans)
+                highChart.AddClusters(new Kmeans(4, 100, data));
 
 
-            foreach (var dataSerie in dataSeries)
-                chart.AddDataSeries(dataSerie);
+            if (linearregression)
+                highChart.AddRegression(new LinearRegression(data.Select(x => x.ToVector2())));
+
+            if (polynomialregression)
+                highChart.AddRegression(new PolynomialRegression(data.Select(x => x.ToVector2()), 3));
+
+            if (pearsoncorrelation)
+                highChart.AddCorrelation(new PearsonCorrelation(data.Select(x => x.ToVector2())));
+
+            if (spearmancorrelation)
+                highChart.AddCorrelation(new SpearmanCorrelation(data.Select(x => x.ToVector2())));
 
 
-            chart.SetDivId("plotdbscan");
-            chart.SetTitle(title);
-            chart.SetXlabel(dataA.ToString());
-            chart.SetYlabel(dataB.ToString());
+            highChart.SetDivId("plotkmeans");
+            highChart.SetTitle($"{dataA} vs {dataB}");
+            highChart.SetXlabel(dataA.ToString());
+            highChart.SetYlabel(dataB.ToString());
 
-            return chart.CreateTemplate();
+            return highChart.CreateTemplate();
         }
 
         public IActionResult Error()

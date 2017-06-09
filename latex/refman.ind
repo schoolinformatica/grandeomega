@@ -1,0 +1,134 @@
+\begin{theindex}
+
+  \item {Chart}, \hyperpage{6}
+  \item {Classify\+Point}
+    \subitem {Data\+Tools\+::classification\+::\+Knearest\+Classification}, 
+		\hyperpage{17}
+  \item {Cluster\+Point}, \hyperpage{7}
+    \subitem {Data\+Tools\+::clustering\+::\+Cluster\+Point}, 
+		\hyperpage{7}
+  \item {Correlation}, \hyperpage{8}
+
+  \indexspace
+
+  \item {Data\+Series}, \hyperpage{8}
+  \item {Data\+Tools}, \hyperpage{4}
+  \item {Data\+Tools.\+classification}, \hyperpage{5}
+  \item {Data\+Tools.\+clustering}, \hyperpage{5}
+  \item {Data\+Tools.\+correlation}, \hyperpage{5}
+  \item {Data\+Tools.\+regression}, \hyperpage{5}
+  \item {Data\+Tools.\+utils}, \hyperpage{5}
+  \item {Data\+Tools\+::classification\+::\+Knearest\+Classification}
+    \subitem {Classify\+Point}, \hyperpage{17}
+    \subitem {Get\+Biggest\+Cluster}, \hyperpage{18}
+    \subitem {Knearest\+Classification}, \hyperpage{17}
+  \item {Data\+Tools\+::clustering\+::\+Cluster\+Point}
+    \subitem {Cluster\+Point}, \hyperpage{7}
+  \item {Data\+Tools\+::clustering\+::\+Dbscan}
+    \subitem {Dbscan}, \hyperpage{9}
+    \subitem {Expand\+Cluster}, \hyperpage{10}
+    \subitem {Region\+Query}, \hyperpage{10}
+    \subitem {Run}, \hyperpage{10}
+  \item {Data\+Tools\+::clustering\+::\+Kmeans}
+    \subitem {Generate\+Random\+Centroids}, \hyperpage{15}
+    \subitem {Get\+Nearest\+Cluster}, \hyperpage{15}
+    \subitem {Get\+Random\+Vector}, \hyperpage{15}
+    \subitem {Is\+Changed\+Cluster}, \hyperpage{15}
+    \subitem {Kmeans}, \hyperpage{14}
+    \subitem {Recalculate\+Centroids}, \hyperpage{16}
+    \subitem {Recalculate\+Clusters}, \hyperpage{16}
+    \subitem {Run}, \hyperpage{16}
+  \item {Dbscan}, \hyperpage{9}
+    \subitem {Data\+Tools\+::clustering\+::\+Dbscan}, \hyperpage{9}
+
+  \indexspace
+
+  \item {Empty$<$ T $>$}, \hyperpage{11}
+  \item {Expand\+Cluster}
+    \subitem {Data\+Tools\+::clustering\+::\+Dbscan}, \hyperpage{10}
+
+  \indexspace
+
+  \item {Generate\+Random\+Centroids}
+    \subitem {Data\+Tools\+::clustering\+::\+Kmeans}, \hyperpage{15}
+  \item {Generic\+Vector}, \hyperpage{11}
+  \item {Get\+Biggest\+Cluster}
+    \subitem {Data\+Tools\+::classification\+::\+Knearest\+Classification}, 
+		\hyperpage{18}
+  \item {Get\+Nearest\+Cluster}
+    \subitem {Data\+Tools\+::clustering\+::\+Kmeans}, \hyperpage{15}
+  \item {Get\+Random\+Vector}
+    \subitem {Data\+Tools\+::clustering\+::\+Kmeans}, \hyperpage{15}
+
+  \indexspace
+
+  \item {Highchart}, \hyperpage{12}
+  \item {Highcharts}, \hyperpage{6}
+
+  \indexspace
+
+  \item {I\+Charts\+List}, \hyperpage{12}
+  \item {I\+Tmpl\+Model}, \hyperpage{12}
+  \item {I\+Tree$<$ T $>$}, \hyperpage{13}
+  \item {Is\+Changed\+Cluster}
+    \subitem {Data\+Tools\+::clustering\+::\+Kmeans}, \hyperpage{15}
+
+  \indexspace
+
+  \item {Kd\+Tree$<$ T $>$}, \hyperpage{13}
+  \item {Kmeans}, \hyperpage{13}
+    \subitem {Data\+Tools\+::clustering\+::\+Kmeans}, \hyperpage{14}
+  \item {Knearest\+Classification}, \hyperpage{16}
+    \subitem {Data\+Tools\+::classification\+::\+Knearest\+Classification}, 
+		\hyperpage{17}
+
+  \indexspace
+
+  \item {Linear\+Regression}, \hyperpage{18}
+
+  \indexspace
+
+  \item {Matrix\+Utils}, \hyperpage{19}
+
+  \indexspace
+
+  \item {Pearson\+Correlation}, \hyperpage{19}
+  \item {Polynomial\+Regression}, \hyperpage{20}
+  \item {Priority\+Que$<$ T $>$}, \hyperpage{20}
+
+  \indexspace
+
+  \item {Que\+Item$<$ T $>$}, \hyperpage{21}
+
+  \indexspace
+
+  \item {Recalculate\+Centroids}
+    \subitem {Data\+Tools\+::clustering\+::\+Kmeans}, \hyperpage{16}
+  \item {Recalculate\+Clusters}
+    \subitem {Data\+Tools\+::clustering\+::\+Kmeans}, \hyperpage{16}
+  \item {Region\+Query}
+    \subitem {Data\+Tools\+::clustering\+::\+Dbscan}, \hyperpage{10}
+  \item {Replacer}, \hyperpage{21}
+  \item {Resources}, \hyperpage{21}
+  \item {Run}
+    \subitem {Data\+Tools\+::clustering\+::\+Dbscan}, \hyperpage{10}
+    \subitem {Data\+Tools\+::clustering\+::\+Kmeans}, \hyperpage{16}
+
+  \indexspace
+
+  \item {Spearman\+Correlation}, \hyperpage{22}
+
+  \indexspace
+
+  \item {Tmpl\+Engine}, \hyperpage{22}
+  \item {Tree}, \hyperpage{6}
+
+  \indexspace
+
+  \item {Utils}, \hyperpage{23}
+
+  \indexspace
+
+  \item {Vector2}, \hyperpage{23}
+
+\end{theindex}

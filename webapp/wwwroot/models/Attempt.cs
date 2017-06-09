@@ -1,6 +1,6 @@
 using System;
 
-namespace models
+namespace webapp.wwwroot.models
 {
     public class Attempt
     {  

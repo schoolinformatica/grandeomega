@@ -4,6 +4,14 @@ using System.Linq;
 
 namespace DataTools.regression
 {
+    /******************************************************
+     *
+     * Polynomial regression measures the relationship 
+     * between a dependent variable Y and a more independent
+     * variable X, modelled as an nth degree polynomial.
+     *
+     ******************************************************/
+    
     public class PolynomialRegression
     {
         private readonly double[][] _matrixPoints;
@@ -37,7 +45,7 @@ namespace DataTools.regression
         {
             var polyPoints = new GenericVector[_data.Length];
 
-            for (int i = 0; i < _data.Length; i++)
+            for (var i = 0; i < _data.Length; i++)
             {
                 polyPoints[i] = new GenericVector(_data[i].X, ComputePolynomialPointY(_data[i].X));
             }
@@ -49,7 +57,7 @@ namespace DataTools.regression
         {
             var polyPoint = 0.0;
 
-            for (int i = 0; i < PolynomialDegree; i++)
+            for (var i = 0; i < PolynomialDegree; i++)
             {
                 polyPoint += _matrixCoefficients[i] * Math.Pow(x, i);
             }
@@ -61,11 +69,11 @@ namespace DataTools.regression
         {
             var inverseMatrixPoints = MatrixUtils.MatrixInverse(_matrixPoints);
 
-            for (int i = 0; i < inverseMatrixPoints.Length; i++)
+            for (var i = 0; i < inverseMatrixPoints.Length; i++)
             {
                 var sum = 0.0;
 
-                for (int j = 0; j < _matrixYvalues.Length; j++)
+                for (var j = 0; j < _matrixYvalues.Length; j++)
                 {
                     sum += _matrixYvalues[j] * inverseMatrixPoints[i][j];
                 }
@@ -111,7 +119,7 @@ namespace DataTools.regression
             {
                 var sum = 0.0;
 
-                for (int i = 0; i < _data.Length; i++)
+                for (var i = 0; i < _data.Length; i++)
                 {
                     sum += Math.Pow(_data[i].X, degree);
                 }

@@ -8,4 +8,7 @@
       <Name>KdTree</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="latex" />
+  </ItemGroup>
 </Project>

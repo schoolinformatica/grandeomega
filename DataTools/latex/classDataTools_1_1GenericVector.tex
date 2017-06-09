@@ -1,0 +1,55 @@
+\hypertarget{classDataTools_1_1GenericVector}{}\subsection{Generic\+Vector Class Reference}
+\label{classDataTools_1_1GenericVector}\index{Generic\+Vector@{Generic\+Vector}}
+
+
+N dimensional vector.  
+
+
+\subsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDataTools_1_1GenericVector_aaa9bcf132f1691298b9bb672f22787d2}\label{classDataTools_1_1GenericVector_aaa9bcf132f1691298b9bb672f22787d2}} 
+{\bfseries Generic\+Vector} (int size)
+\item 
+\mbox{\Hypertarget{classDataTools_1_1GenericVector_a542ba2abc2b5ad8a398ad97bf2a682b0}\label{classDataTools_1_1GenericVector_a542ba2abc2b5ad8a398ad97bf2a682b0}} 
+{\bfseries Generic\+Vector} (params double\mbox{[}$\,$\mbox{]} args)
+\item 
+\mbox{\Hypertarget{classDataTools_1_1GenericVector_adf109e0e2008229e56ef6f898425311d}\label{classDataTools_1_1GenericVector_adf109e0e2008229e56ef6f898425311d}} 
+double \mbox{[}$\,$\mbox{]} {\bfseries To\+Array} ()
+\item 
+\mbox{\Hypertarget{classDataTools_1_1GenericVector_aa73e7c4dd1df5fd5fbf81c7764ee1533}\label{classDataTools_1_1GenericVector_aa73e7c4dd1df5fd5fbf81c7764ee1533}} 
+override string {\bfseries To\+String} ()
+\item 
+\mbox{\Hypertarget{classDataTools_1_1GenericVector_a31e1a43cd76a962c919d06400fdcc10b}\label{classDataTools_1_1GenericVector_a31e1a43cd76a962c919d06400fdcc10b}} 
+\hyperlink{classDataTools_1_1Vector2}{Vector2} {\bfseries To\+Vector2} (int index\+One=0, int index\+Two=1)
+\end{DoxyCompactItemize}
+\subsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDataTools_1_1GenericVector_af0e039764e63ac4045ae9946c22876b7}\label{classDataTools_1_1GenericVector_af0e039764e63ac4045ae9946c22876b7}} 
+static \hyperlink{classDataTools_1_1GenericVector}{Generic\+Vector} {\bfseries Sum} (\hyperlink{classDataTools_1_1GenericVector}{Generic\+Vector} a, \hyperlink{classDataTools_1_1GenericVector}{Generic\+Vector} b)
+\item 
+\mbox{\Hypertarget{classDataTools_1_1GenericVector_a4d4381024a0923328a212e567f5f3a65}\label{classDataTools_1_1GenericVector_a4d4381024a0923328a212e567f5f3a65}} 
+static \hyperlink{classDataTools_1_1GenericVector}{Generic\+Vector} {\bfseries Devide} (\hyperlink{classDataTools_1_1GenericVector}{Generic\+Vector} a, int devider)
+\item 
+\mbox{\Hypertarget{classDataTools_1_1GenericVector_ab2af09a4dcf0d49252e0a388de75b1a6}\label{classDataTools_1_1GenericVector_ab2af09a4dcf0d49252e0a388de75b1a6}} 
+static double {\bfseries Distance} (\hyperlink{classDataTools_1_1GenericVector}{Generic\+Vector} a, \hyperlink{classDataTools_1_1GenericVector}{Generic\+Vector} b)
+\end{DoxyCompactItemize}
+\subsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDataTools_1_1GenericVector_af06eb7b9b70be91dadd4f12ebcaed796}\label{classDataTools_1_1GenericVector_af06eb7b9b70be91dadd4f12ebcaed796}} 
+int {\bfseries Size} =$>$ \+\_\+points.\+Length
+\item 
+\mbox{\Hypertarget{classDataTools_1_1GenericVector_ab9334ca30e9ffb3ef0406a11c712f05c}\label{classDataTools_1_1GenericVector_ab9334ca30e9ffb3ef0406a11c712f05c}} 
+double {\bfseries Biggest\+Point} =$>$ \+\_\+points.\+Max()
+\item 
+\mbox{\Hypertarget{classDataTools_1_1GenericVector_a18bad8396584a2fd063e49ba30a84d55}\label{classDataTools_1_1GenericVector_a18bad8396584a2fd063e49ba30a84d55}} 
+double {\bfseries this\mbox{[}int x\mbox{]}} =$>$ \+\_\+points\mbox{[}x\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Detailed Description}
+N dimensional vector. 
+
+This class is a vector with N dimensions. The amount of dimensions is created upon initialization and can not be changed afterwards. It implements some basic vector algebra like summation, multiplication and deviding. 

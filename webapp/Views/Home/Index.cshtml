@@ -1,6 +1,6 @@
 @using System.Linq;
 @using Highcharts
-@using models
+@using webapp.wwwroot.models
 
 @{
     ViewData["Title"] = "Home Page";
@@ -37,7 +37,19 @@
                     <label><input id="dbscan" type="checkbox"> Dbscan</label>
                 </li>
                 <li>
-                    <label><input id="simpleregression" type="checkbox"> Simple Regression</label>
+                    <label><input id="simpleregression" type="checkbox"> Linear Regression</label>
+                </li>
+                <li>
+                    <label><input id="polynomialregression" type="checkbox"> Polynomial Regression</label>
+                </li>
+                <li>
+                    <label><input id="pearsoncorr" type="checkbox"> Pearson Correlation</label>
+                </li>
+                <li>
+                    <label><input id="spearmancorr" type="checkbox"> Spearman Correlation</label>
+                </li>
+                <li>
+                    <label><input id="knearest" type="checkbox"> Knearest Classification</label>
                 </li>
 
             </ul>
@@ -48,7 +60,6 @@
 
 
 
-    <div id="plotdbscan" style="min-width: 310px; height: 400px; max-width: 800px; margin: 0 auto"></div>
     <div id="plotkmeans" style="min-width: 310px; height: 400px; max-width: 800px; margin: 0 auto"></div>
 
     <script src="~/lib/highcharts/highcharts.js"></script>
@@ -58,7 +69,11 @@
             var dataB = $("#dataB").val();
             var kmeans = $('#kmeans').is(':checked');
             var dbscan = $("#dbscan").is(':checked');
-            var simpleregression = $("#simpleregression").is(':checked');
+            var linearregression = $("#simpleregression").is(':checked');
+            var polynomialregression = $("#polynomialregression").is(':checked');
+            var pearsoncorrelation = $("#pearsoncorr").is(':checked');
+            var spearmancorrelation = $("#spearmancorr").is(':checked');
+            var knearest = $("#knearest").is(':checked');
             $.ajax({
                 type: "POST",
                 url: "/Home/CreateGraph",
@@ -67,7 +82,11 @@
                     DataB: dataB,
                     Kmeans: kmeans,
                     Dbscan: dbscan,
-                    Simpleregression: simpleregression
+                    Linearregression: linearregression,
+                    polynomialregression: polynomialregression,
+                    pearsoncorrelation: pearsoncorrelation,
+                    spearmancorrelation: spearmancorrelation,
+                    classifyungraded: knearest
                 },
                 dataType: 'text',
                 error: function(XMLHttpRequest, textStatus, errorThrown) {

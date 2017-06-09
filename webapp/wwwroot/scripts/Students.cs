@@ -1,70 +1,69 @@
-using YamlParser;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using models;
-using System.Text.RegularExpressions;
-using Microsoft.AspNetCore.Authentication;
-//TODO: Replace all strings with enum/constants
-public static class Students
+using webapp.wwwroot.models;
+
+namespace webapp.wwwroot.scripts
 {
-    public static IEnumerable<IGrouping<string, Dictionary<string, string>>> studentAttempts;
-    public static List<Student> students = new List<Student>();
-    public static List<string> properties = new List<string>();
-
-    public static void parseData()
+    public static class Students
     {
-        const string watchDir = "wwwroot/dbdump";
-        var files = Directory.GetFiles(watchDir);
-        var parser = new Parser();
-        var data = new List<Dictionary<string, string>>();
-        
-        foreach (var file in files)
-        {
-            data.AddRange(parser.Parse(file));
-        }
-        
-        var grades = parser.Parse("wwwroot/grades.yaml");
-        var temp = new Dictionary<int, Student>();
-        var gradess = new Dictionary<int, int>();
+        private const string WatchDirectory = "wwwroot/dbdump";
+        private const string GradesFile = "wwwroot/grades.yaml";
 
-        foreach (var grade in grades)
-        {
-            int score;
-            if (int.TryParse(grade["grade"], out score))
-                gradess.Add(int.Parse(grade["student_id"]), score);
-        }
+        public static List<Student> StudentsGraded = new List<Student>();
+        public static List<Student> StudentsUngraded = new List<Student>();
 
-        properties = data.First().Keys.ToList();
-        foreach (var attempt in data)
+        public static void ParseData()
         {
-            var att = new Attempt()
+            var data = new List<Dictionary<string, string>>();
+            var studentLookup = new Dictionary<int, Student>();
+            var gradess = new Dictionary<int, int>();
+            var grades = Parser.Parse(GradesFile);
+            var files = Directory.GetFiles(WatchDirectory);
+
+            foreach (var file in files)
             {
-                Id = int.Parse(attempt["id"]),
-                TeachingUnitId = int.Parse(attempt["teaching_unit_id"]),
-                StudentId = int.Parse(attempt["student_id"]),
-                Success = attempt["sort"].Trim() == "success",
-                Date = DateTime.Parse(attempt["utc"].Substring(attempt["utc"].IndexOf('-') - 4))
-            };
+                data.AddRange(Parser.Parse(file));
+            }
 
-            if (!temp.ContainsKey(att.StudentId))
+            foreach (var grade in grades)
             {
-                int Class;
-                var student = new Student()
+                int score;
+                if (int.TryParse(grade["grade"], out score))
+                    gradess.Add(int.Parse(grade["student_id"]), score);
+            }
+
+            foreach (var attempt in data)
+            {
+                var att = new Attempt()
                 {
-                    Id = att.StudentId,
-                    Grade = gradess.ContainsKey(att.StudentId) ? gradess[att.StudentId] : -1,
-                    Class = int.TryParse(attempt["class"], out Class) ? Class : 0
+                    Id = int.Parse(attempt["id"]),
+                    TeachingUnitId = int.Parse(attempt["teaching_unit_id"]),
+                    StudentId = int.Parse(attempt["student_id"]),
+                    Success = attempt["sort"].Trim() == "success",
+                    Date = DateTime.Parse(attempt["utc"].Substring(attempt["utc"].IndexOf('-') - 4))
                 };
-                student.Attempts.Add(att);
-                temp.Add(student.Id, student);
+
+                if (!studentLookup.ContainsKey(att.StudentId))
+                {
+                    int Class;
+                    var student = new Student()
+                    {
+                        Id = att.StudentId,
+                        Grade = gradess.ContainsKey(att.StudentId) ? gradess[att.StudentId] : -1,
+                        Class = int.TryParse(attempt["class"], out Class) ? Class : 0
+                    };
+                    student.Attempts.Add(att);
+                    studentLookup.Add(student.Id, student);
+                }
+                else
+                {
+                    studentLookup[att.StudentId].Attempts.Add(att);
+                }
             }
-            else
-            {
-                temp[att.StudentId].Attempts.Add(att);
-            }
+            StudentsGraded = studentLookup.Values.Where(x => x.Grade >= 0).ToList();
+            StudentsUngraded = studentLookup.Values.Where(x => x.Grade < 0).ToList();
         }
-        students = temp.Values.ToList();
     }
 }

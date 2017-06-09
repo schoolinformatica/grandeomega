@@ -1,0 +1,41 @@
+\hypertarget{classDataTools_1_1clustering_1_1Dbscan}{}\subsection{Dbscan Class Reference}
+\label{classDataTools_1_1clustering_1_1Dbscan}\index{Dbscan@{Dbscan}}
+
+
+Class featuring the DB Scan algorithm.  
+
+
+\subsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDataTools_1_1clustering_1_1Dbscan_ac54fa4e699ed60d33e90b0deab9f4006_ac54fa4e699ed60d33e90b0deab9f4006}{Dbscan} (float eps, int min\+Points, I\+Enumerable$<$ \hyperlink{classDataTools_1_1GenericVector}{Generic\+Vector} $>$ data)
+\end{DoxyCompactItemize}
+\subsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDataTools_1_1clustering_1_1Dbscan_a06317119faad60c7efd9feabeb13c795}\label{classDataTools_1_1clustering_1_1Dbscan_a06317119faad60c7efd9feabeb13c795}} 
+Dictionary$<$ int, I\+Enumerable$<$ \hyperlink{classDataTools_1_1GenericVector}{Generic\+Vector} $>$ $>$ {\bfseries Data\+Clusters}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Detailed Description}
+Class featuring the DB Scan algorithm. 
+
+The DB Scan algorithm is capable of clustering vectors of {\ttfamily n} dimensions. As input, it needs a radius within neighbours should be together, the minimum amount of point in a cluster and ofcourse the dataset, in this case, a {\ttfamily I\+Enumerable$<$\+Generic\+Vector$>$}. As output it produces a Dictionary Data\+Clusters with the key as cluster and the value the vectors belonging to the cluster. 
+
+\subsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDataTools_1_1clustering_1_1Dbscan_ac54fa4e699ed60d33e90b0deab9f4006_ac54fa4e699ed60d33e90b0deab9f4006}\label{classDataTools_1_1clustering_1_1Dbscan_ac54fa4e699ed60d33e90b0deab9f4006_ac54fa4e699ed60d33e90b0deab9f4006}} 
+\index{Data\+Tools\+::clustering\+::\+Dbscan@{Data\+Tools\+::clustering\+::\+Dbscan}!Dbscan@{Dbscan}}
+\index{Dbscan@{Dbscan}!Data\+Tools\+::clustering\+::\+Dbscan@{Data\+Tools\+::clustering\+::\+Dbscan}}
+\paragraph{\texorpdfstring{Dbscan()}{Dbscan()}}
+{\footnotesize\ttfamily \hyperlink{classDataTools_1_1clustering_1_1Dbscan}{Dbscan} (\begin{DoxyParamCaption}\item[{float}]{eps,  }\item[{int}]{min\+Points,  }\item[{I\+Enumerable$<$ \hyperlink{classDataTools_1_1GenericVector}{Generic\+Vector} $>$}]{data }\end{DoxyParamCaption})}
+
+Constructor for DB Scan 
+\begin{DoxyParams}{Parameters}
+{\em eps} & Radius within neighbours should be \\
+\hline
+{\em min\+Points} & Min amount of points in a cluster \\
+\hline
+{\em data} & Dataset to cluster \\
+\hline
+\end{DoxyParams}

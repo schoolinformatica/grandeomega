@@ -4,6 +4,15 @@ using System.Linq;
 
 namespace DataTools.correlation
 {
+    /******************************************************
+     *
+     * Spearman's Rank Correlation Coefficient is rank 
+     * correlation, which assesses monotonic relationschips.
+     * Instead of looking at the values, it looks at the
+     * statiscal dependence between ranking of X and Y.
+     *
+     ******************************************************/
+    
     public class SpearmanCorrelation : Correlation
     {
         public SpearmanCorrelation(IEnumerable<Vector2> data) : base(data)

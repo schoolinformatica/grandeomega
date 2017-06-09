@@ -1,0 +1,62 @@
+\begin{theindex}
+
+  \item {Correlation}, \hyperpage{4}
+
+  \indexspace
+
+  \item {D\+ES}, \hyperpage{6}
+  \item {Data\+Tools}, \hyperpage{3}
+  \item {Data\+Tools.\+classification}, \hyperpage{3}
+  \item {Data\+Tools.\+clustering}, \hyperpage{3}
+  \item {Data\+Tools.\+correlation}, \hyperpage{4}
+  \item {Data\+Tools.\+regression}, \hyperpage{4}
+  \item {Data\+Tools.\+utils}, \hyperpage{4}
+  \item {Data\+Tools\+::clustering\+::\+Dbscan}
+    \subitem {Dbscan}, \hyperpage{5}
+  \item {Data\+Tools\+::clustering\+::\+Kmeans}
+    \subitem {Kmeans}, \hyperpage{7}
+  \item {Dbscan}, \hyperpage{5}
+    \subitem {Data\+Tools\+::clustering\+::\+Dbscan}, \hyperpage{5}
+
+  \indexspace
+
+  \item {Generic\+Vector}, \hyperpage{6}
+
+  \indexspace
+
+  \item {Kmeans}, \hyperpage{6}
+    \subitem {Data\+Tools\+::clustering\+::\+Kmeans}, \hyperpage{7}
+  \item {Knearest\+Classification}, \hyperpage{7}
+
+  \indexspace
+
+  \item {Linear\+Regression}, \hyperpage{8}
+
+  \indexspace
+
+  \item {Matrix\+Utils}, \hyperpage{8}
+
+  \indexspace
+
+  \item {Pearson\+Correlation}, \hyperpage{8}
+  \item {Polynomial\+Regression}, \hyperpage{9}
+  \item {Priority\+Que$<$ T $>$}, \hyperpage{9}
+
+  \indexspace
+
+  \item {Que\+Item$<$ T $>$}, \hyperpage{9}
+
+  \indexspace
+
+  \item {Smoothing}, \hyperpage{4}
+  \item {Spearman\+Correlation}, \hyperpage{9}
+
+  \indexspace
+
+  \item {Utils}, \hyperpage{10}
+
+  \indexspace
+
+  \item {Vector2}, \hyperpage{10}
+
+\end{theindex}

@@ -3,15 +3,25 @@ using System.Linq;
 
 namespace DataTools.clustering
 {
+    
+    /******************************************************
+     *
+     * The DB Scan algorithm is capable of clustering  
+     * vectors of n dimensions. As input it need the radius
+     * withing neighbours should be together, the minimum
+     * amount of points in a cluster and the dataset to 
+     * cluster.  
+     *
+     ******************************************************/
+    
+
     public class Dbscan
     {
         private readonly float _radius;
         private readonly int _minPoints;
         private readonly List<ClusterPoint> _dataSet;
 
-        public Dictionary<int, IEnumerable<GenericVector>> DataClusters { get; } =
-            new Dictionary<int, IEnumerable<GenericVector>>();
-
+        public Dictionary<int, IEnumerable<GenericVector>> DataClusters { get; }
 
         public Dbscan(float eps, int minPoints, IEnumerable<GenericVector> data)
         {
@@ -19,10 +29,13 @@ namespace DataTools.clustering
             _minPoints = minPoints;
             _dataSet = data.Select(x => new ClusterPoint(x)).ToList();
 
+            DataClusters = new Dictionary<int, IEnumerable<GenericVector>>();
+
             Run();
         }
 
-        public void Run()
+        
+        private void Run()
         {
             var cluster = 0;
 
@@ -43,7 +56,7 @@ namespace DataTools.clustering
                     ExpandCluster(clusterPoint, neighbours, cluster);
                 }
             }
-            
+
             foreach (var clust in _dataSet.Where(x => !x.Noise).GroupBy(x => x.Cluster))
             {
                 var vectors = clust.Select(x => x.Vector);
@@ -72,15 +85,12 @@ namespace DataTools.clustering
                             que.Enqueue(newNeighbour);
                     }
                 }
-                
-                //TODO: Change this (Visitor pattern?)
+
                 if (neighbour.Cluster < 0)
                     neighbour.Cluster = cluster;
             }
-            
         }
 
-        // return all points within Point's radius-neighborhood (including Point)
 
         private List<ClusterPoint> RegionQuery(GenericVector point)
         {

@@ -7,12 +7,6 @@ using DataTools.regression;
 using Regression;
 using Xunit;
 
-//Check if SOLID design principles
-// k-nearest neighbors algorithm 
-// neural networks
-
-// https://en.wikipedia.org/wiki/Statistical_classification#Algorithms
-
 namespace UnitTestProject
 {
     public class UnitTest1

@@ -1,0 +1,151 @@
+\hypertarget{classDataTools_1_1clustering_1_1Kmeans}{}\subsection{Kmeans Class Reference}
+\label{classDataTools_1_1clustering_1_1Kmeans}\index{Kmeans@{Kmeans}}
+
+
+Class featuring de K\+Means algorithm.  
+
+
+\subsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDataTools_1_1clustering_1_1Kmeans_a0104b68b82ac185d65d0df9a02569ec8_a0104b68b82ac185d65d0df9a02569ec8}{Kmeans} (int k, int iterations, I\+Enumerable$<$ \hyperlink{classDataTools_1_1GenericVector}{Generic\+Vector} $>$ data\+Set)
+\end{DoxyCompactItemize}
+\subsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDataTools_1_1clustering_1_1Kmeans_a06317119faad60c7efd9feabeb13c795}\label{classDataTools_1_1clustering_1_1Kmeans_a06317119faad60c7efd9feabeb13c795}} 
+Dictionary$<$ int, I\+Enumerable$<$ \hyperlink{classDataTools_1_1GenericVector}{Generic\+Vector} $>$ $>$ {\bfseries Data\+Clusters}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\subsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classDataTools_1_1clustering_1_1Kmeans_aa3eca255b6be227d7d901cc2a72017a5_aa3eca255b6be227d7d901cc2a72017a5}{Run} ()
+\item 
+void \hyperlink{classDataTools_1_1clustering_1_1Kmeans_a348b17d6f4e97ca727ba1c9dad533d2b_a348b17d6f4e97ca727ba1c9dad533d2b}{Recalculate\+Clusters} ()
+\item 
+void \hyperlink{classDataTools_1_1clustering_1_1Kmeans_a7fff9b4f946273bc93e33a468c23d1a8_a7fff9b4f946273bc93e33a468c23d1a8}{Recalculate\+Centroids} ()
+\item 
+int \hyperlink{classDataTools_1_1clustering_1_1Kmeans_a0b0bf52405efb95800cf147176b85c4e_a0b0bf52405efb95800cf147176b85c4e}{Get\+Nearest\+Cluster} (\hyperlink{classDataTools_1_1GenericVector}{Generic\+Vector} v)
+\item 
+Dictionary$<$ int, \hyperlink{classDataTools_1_1GenericVector}{Generic\+Vector} $>$ \hyperlink{classDataTools_1_1clustering_1_1Kmeans_a9000ebd9a16ff504a2a0ffb139871fba_a9000ebd9a16ff504a2a0ffb139871fba}{Generate\+Random\+Centroids} (int k\+Amount)
+\item 
+\hyperlink{classDataTools_1_1GenericVector}{Generic\+Vector} \hyperlink{classDataTools_1_1clustering_1_1Kmeans_adb45b460ab8312abb30b509c15fd91fb_adb45b460ab8312abb30b509c15fd91fb}{Get\+Random\+Vector} ()
+\end{DoxyCompactItemize}
+\subsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classDataTools_1_1clustering_1_1Kmeans_a9347cabe7e34cd6847d27df3d275195d_a9347cabe7e34cd6847d27df3d275195d}{Is\+Changed\+Cluster} (I\+Enumerable$<$ int $>$ a, I\+Read\+Only\+List$<$ int $>$ b)
+\end{DoxyCompactItemize}
+\subsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDataTools_1_1clustering_1_1Kmeans_a0a5c3bc889cf50b80ab55ebed8f57312}\label{classDataTools_1_1clustering_1_1Kmeans_a0a5c3bc889cf50b80ab55ebed8f57312}} 
+readonly Random {\bfseries \+\_\+random} = new Random()
+\item 
+\mbox{\Hypertarget{classDataTools_1_1clustering_1_1Kmeans_a554eac85df5a5531150341dc478c63fa}\label{classDataTools_1_1clustering_1_1Kmeans_a554eac85df5a5531150341dc478c63fa}} 
+readonly int {\bfseries \+\_\+clusters}
+\item 
+\mbox{\Hypertarget{classDataTools_1_1clustering_1_1Kmeans_a430bead482bd81bdb5197d3685bcdd0f}\label{classDataTools_1_1clustering_1_1Kmeans_a430bead482bd81bdb5197d3685bcdd0f}} 
+readonly int {\bfseries \+\_\+iterations}
+\item 
+\mbox{\Hypertarget{classDataTools_1_1clustering_1_1Kmeans_a91e409ed78afae05248478bc0fb5445b}\label{classDataTools_1_1clustering_1_1Kmeans_a91e409ed78afae05248478bc0fb5445b}} 
+readonly List$<$ \hyperlink{classDataTools_1_1clustering_1_1ClusterPoint}{Cluster\+Point} $>$ {\bfseries \+\_\+data\+Set}
+\item 
+\mbox{\Hypertarget{classDataTools_1_1clustering_1_1Kmeans_a736320ca5ab8246e8923f4c627ca058d}\label{classDataTools_1_1clustering_1_1Kmeans_a736320ca5ab8246e8923f4c627ca058d}} 
+Dictionary$<$ int, \hyperlink{classDataTools_1_1GenericVector}{Generic\+Vector} $>$ {\bfseries \+\_\+centroids}
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Detailed Description}
+Class featuring de K\+Means algorithm. 
+
+K\+Means is a clustering algorithm. As input it needs {\ttfamily k} (the amount of clusters), the max amount of iterations and the dataset to cluster. It outputs the clustered values. 
+
+\subsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDataTools_1_1clustering_1_1Kmeans_a0104b68b82ac185d65d0df9a02569ec8_a0104b68b82ac185d65d0df9a02569ec8}\label{classDataTools_1_1clustering_1_1Kmeans_a0104b68b82ac185d65d0df9a02569ec8_a0104b68b82ac185d65d0df9a02569ec8}} 
+\index{Data\+Tools\+::clustering\+::\+Kmeans@{Data\+Tools\+::clustering\+::\+Kmeans}!Kmeans@{Kmeans}}
+\index{Kmeans@{Kmeans}!Data\+Tools\+::clustering\+::\+Kmeans@{Data\+Tools\+::clustering\+::\+Kmeans}}
+\paragraph{\texorpdfstring{Kmeans()}{Kmeans()}}
+{\footnotesize\ttfamily \hyperlink{classDataTools_1_1clustering_1_1Kmeans}{Kmeans} (\begin{DoxyParamCaption}\item[{int}]{k,  }\item[{int}]{iterations,  }\item[{I\+Enumerable$<$ \hyperlink{classDataTools_1_1GenericVector}{Generic\+Vector} $>$}]{data\+Set }\end{DoxyParamCaption})}
+
+Constructor for Kmeans 
+\begin{DoxyParams}{Parameters}
+{\em k} & Amount of clusters \\
+\hline
+{\em iterations} & Max amount of iterations \\
+\hline
+{\em data\+Set} & The dataset to cluster \\
+\hline
+\end{DoxyParams}
+
+
+\subsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDataTools_1_1clustering_1_1Kmeans_a9000ebd9a16ff504a2a0ffb139871fba_a9000ebd9a16ff504a2a0ffb139871fba}\label{classDataTools_1_1clustering_1_1Kmeans_a9000ebd9a16ff504a2a0ffb139871fba_a9000ebd9a16ff504a2a0ffb139871fba}} 
+\index{Data\+Tools\+::clustering\+::\+Kmeans@{Data\+Tools\+::clustering\+::\+Kmeans}!Generate\+Random\+Centroids@{Generate\+Random\+Centroids}}
+\index{Generate\+Random\+Centroids@{Generate\+Random\+Centroids}!Data\+Tools\+::clustering\+::\+Kmeans@{Data\+Tools\+::clustering\+::\+Kmeans}}
+\paragraph{\texorpdfstring{Generate\+Random\+Centroids()}{GenerateRandomCentroids()}}
+{\footnotesize\ttfamily Dictionary$<$int, \hyperlink{classDataTools_1_1GenericVector}{Generic\+Vector}$>$ Generate\+Random\+Centroids (\begin{DoxyParamCaption}\item[{int}]{k\+Amount }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Generate random centroids to start with 
+\begin{DoxyParams}{Parameters}
+{\em k\+Amount} & Amount of centroid to generate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Centroids 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDataTools_1_1clustering_1_1Kmeans_a0b0bf52405efb95800cf147176b85c4e_a0b0bf52405efb95800cf147176b85c4e}\label{classDataTools_1_1clustering_1_1Kmeans_a0b0bf52405efb95800cf147176b85c4e_a0b0bf52405efb95800cf147176b85c4e}} 
+\index{Data\+Tools\+::clustering\+::\+Kmeans@{Data\+Tools\+::clustering\+::\+Kmeans}!Get\+Nearest\+Cluster@{Get\+Nearest\+Cluster}}
+\index{Get\+Nearest\+Cluster@{Get\+Nearest\+Cluster}!Data\+Tools\+::clustering\+::\+Kmeans@{Data\+Tools\+::clustering\+::\+Kmeans}}
+\paragraph{\texorpdfstring{Get\+Nearest\+Cluster()}{GetNearestCluster()}}
+{\footnotesize\ttfamily int Get\+Nearest\+Cluster (\begin{DoxyParamCaption}\item[{\hyperlink{classDataTools_1_1GenericVector}{Generic\+Vector}}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Get the cluster wherefrom the centroid is nearest to the point 
+\begin{DoxyParams}{Parameters}
+{\em vector} & Vector to get the nearest cluster for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nearest cluster 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDataTools_1_1clustering_1_1Kmeans_adb45b460ab8312abb30b509c15fd91fb_adb45b460ab8312abb30b509c15fd91fb}\label{classDataTools_1_1clustering_1_1Kmeans_adb45b460ab8312abb30b509c15fd91fb_adb45b460ab8312abb30b509c15fd91fb}} 
+\index{Data\+Tools\+::clustering\+::\+Kmeans@{Data\+Tools\+::clustering\+::\+Kmeans}!Get\+Random\+Vector@{Get\+Random\+Vector}}
+\index{Get\+Random\+Vector@{Get\+Random\+Vector}!Data\+Tools\+::clustering\+::\+Kmeans@{Data\+Tools\+::clustering\+::\+Kmeans}}
+\paragraph{\texorpdfstring{Get\+Random\+Vector()}{GetRandomVector()}}
+{\footnotesize\ttfamily \hyperlink{classDataTools_1_1GenericVector}{Generic\+Vector} Get\+Random\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Pick random vector from the dataset \mbox{\Hypertarget{classDataTools_1_1clustering_1_1Kmeans_a9347cabe7e34cd6847d27df3d275195d_a9347cabe7e34cd6847d27df3d275195d}\label{classDataTools_1_1clustering_1_1Kmeans_a9347cabe7e34cd6847d27df3d275195d_a9347cabe7e34cd6847d27df3d275195d}} 
+\index{Data\+Tools\+::clustering\+::\+Kmeans@{Data\+Tools\+::clustering\+::\+Kmeans}!Is\+Changed\+Cluster@{Is\+Changed\+Cluster}}
+\index{Is\+Changed\+Cluster@{Is\+Changed\+Cluster}!Data\+Tools\+::clustering\+::\+Kmeans@{Data\+Tools\+::clustering\+::\+Kmeans}}
+\paragraph{\texorpdfstring{Is\+Changed\+Cluster()}{IsChangedCluster()}}
+{\footnotesize\ttfamily static bool Is\+Changed\+Cluster (\begin{DoxyParamCaption}\item[{I\+Enumerable$<$ int $>$}]{a,  }\item[{I\+Read\+Only\+List$<$ int $>$}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+Check if the clusters are changed by comparing the two provided collections 
+\begin{DoxyParams}{Parameters}
+{\em a} & Collection A \\
+\hline
+{\em b} & Collection B \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+/c True if the cluster is changed otherwise /c false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDataTools_1_1clustering_1_1Kmeans_a7fff9b4f946273bc93e33a468c23d1a8_a7fff9b4f946273bc93e33a468c23d1a8}\label{classDataTools_1_1clustering_1_1Kmeans_a7fff9b4f946273bc93e33a468c23d1a8_a7fff9b4f946273bc93e33a468c23d1a8}} 
+\index{Data\+Tools\+::clustering\+::\+Kmeans@{Data\+Tools\+::clustering\+::\+Kmeans}!Recalculate\+Centroids@{Recalculate\+Centroids}}
+\index{Recalculate\+Centroids@{Recalculate\+Centroids}!Data\+Tools\+::clustering\+::\+Kmeans@{Data\+Tools\+::clustering\+::\+Kmeans}}
+\paragraph{\texorpdfstring{Recalculate\+Centroids()}{RecalculateCentroids()}}
+{\footnotesize\ttfamily void Recalculate\+Centroids (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Recompute the new centroids of the clusters \mbox{\Hypertarget{classDataTools_1_1clustering_1_1Kmeans_a348b17d6f4e97ca727ba1c9dad533d2b_a348b17d6f4e97ca727ba1c9dad533d2b}\label{classDataTools_1_1clustering_1_1Kmeans_a348b17d6f4e97ca727ba1c9dad533d2b_a348b17d6f4e97ca727ba1c9dad533d2b}} 
+\index{Data\+Tools\+::clustering\+::\+Kmeans@{Data\+Tools\+::clustering\+::\+Kmeans}!Recalculate\+Clusters@{Recalculate\+Clusters}}
+\index{Recalculate\+Clusters@{Recalculate\+Clusters}!Data\+Tools\+::clustering\+::\+Kmeans@{Data\+Tools\+::clustering\+::\+Kmeans}}
+\paragraph{\texorpdfstring{Recalculate\+Clusters()}{RecalculateClusters()}}
+{\footnotesize\ttfamily void Recalculate\+Clusters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Recalculate the cluster foreach point regarding the current centroid. \mbox{\Hypertarget{classDataTools_1_1clustering_1_1Kmeans_aa3eca255b6be227d7d901cc2a72017a5_aa3eca255b6be227d7d901cc2a72017a5}\label{classDataTools_1_1clustering_1_1Kmeans_aa3eca255b6be227d7d901cc2a72017a5_aa3eca255b6be227d7d901cc2a72017a5}} 
+\index{Data\+Tools\+::clustering\+::\+Kmeans@{Data\+Tools\+::clustering\+::\+Kmeans}!Run@{Run}}
+\index{Run@{Run}!Data\+Tools\+::clustering\+::\+Kmeans@{Data\+Tools\+::clustering\+::\+Kmeans}}
+\paragraph{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily void Run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Run the algorithm on the provided dataset 

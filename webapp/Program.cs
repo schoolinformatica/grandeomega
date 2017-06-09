@@ -1,6 +1,6 @@
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
-using startup;
+using webapp.wwwroot.scripts;
 
 namespace WebApplication
 {

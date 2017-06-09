@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using DataTools;
 
-namespace models
+namespace webapp.wwwroot.models
 {
     //TODO: Make typesafe enum for the Student possibilities
     public class Student
@@ -17,19 +17,19 @@ namespace models
         public void Filter()
         {
             var filteredAtt = new List<Attempt>();
-            for (var i = 0; i < Attempts.Count; i++)
+
+            foreach (var attempt in Attempts)
             {
                 if (!filteredAtt.Any())
                 {
-                    filteredAtt.Add(Attempts[i]);
+                    filteredAtt.Add(attempt);
                     continue;
                 }
 
-                if (Math.Abs((filteredAtt.Last().Date - Attempts[i].Date).TotalSeconds) > 5)
-                {
-                    filteredAtt.Add(Attempts[i]);
-                }
+                if (Math.Abs((filteredAtt.Last().Date - attempt.Date).TotalSeconds) > 5)
+                    filteredAtt.Add(attempt);
             }
+
             Attempts = filteredAtt;
         }
 
@@ -37,7 +37,7 @@ namespace models
         {
             var v = new double[args.Length];
 
-            for (int i = 0; i < args.Length; i++)
+            for (var i = 0; i < args.Length; i++)
                 v[i] = GetValueOf(args[i]);
 
             return new GenericVector(v);
@@ -66,10 +66,10 @@ namespace models
                     return Attempts.Count(x => x.Success);
 
                 case Stud.SuccessRatio:
-                    return Attempts.Count(x => x.Success) / (float)Attempts.Count();
+                    return Attempts.Count(x => x.Success) / (float) Attempts.Count();
 
                 case Stud.FailRatio:
-                    return Attempts.Count(x => !x.Success) / (float)Attempts.Count();
+                    return Attempts.Count(x => !x.Success) / (float) Attempts.Count();
 
                 default:
                     throw new Exception("Enumeration not implemented yet");

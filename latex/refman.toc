@@ -1,0 +1,76 @@
+\contentsline {section}{\numberline {1}R\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}E\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}A\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}D\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}ME}{2}{section.1}
+\contentsline {section}{\numberline {2}Todo List}{2}{section.2}
+\contentsline {section}{\numberline {3}Namespace Index}{2}{section.3}
+\contentsline {subsection}{\numberline {3.1}Namespace List}{2}{subsection.3.1}
+\contentsline {section}{\numberline {4}Hierarchical Index}{2}{section.4}
+\contentsline {subsection}{\numberline {4.1}Class Hierarchy}{2}{subsection.4.1}
+\contentsline {section}{\numberline {5}Class Index}{3}{section.5}
+\contentsline {subsection}{\numberline {5.1}Class List}{3}{subsection.5.1}
+\contentsline {section}{\numberline {6}Namespace Documentation}{4}{section.6}
+\contentsline {subsection}{\numberline {6.1}Data\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Tools Namespace Reference}{4}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Data\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Tools.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}classification Namespace Reference}{5}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Data\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Tools.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}clustering Namespace Reference}{5}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}Data\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Tools.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}correlation Namespace Reference}{5}{subsection.6.4}
+\contentsline {subsection}{\numberline {6.5}Data\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Tools.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}regression Namespace Reference}{5}{subsection.6.5}
+\contentsline {subsection}{\numberline {6.6}Data\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Tools.\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}utils Namespace Reference}{5}{subsection.6.6}
+\contentsline {subsection}{\numberline {6.7}Highcharts Namespace Reference}{6}{subsection.6.7}
+\contentsline {subsection}{\numberline {6.8}Tree Namespace Reference}{6}{subsection.6.8}
+\contentsline {section}{\numberline {7}Class Documentation}{6}{section.7}
+\contentsline {subsection}{\numberline {7.1}Chart Class Reference}{6}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Cluster\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Point Class Reference}{7}{subsection.7.2}
+\contentsline {subsubsection}{\numberline {7.2.1}Detailed Description}{7}{subsubsection.7.2.1}
+\contentsline {subsubsection}{\numberline {7.2.2}Constructor \& Destructor Documentation}{7}{subsubsection.7.2.2}
+\contentsline {paragraph}{\numberline {7.2.2.1}Cluster\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Point()}{7}{paragraph.7.2.2.1}
+\contentsline {subsection}{\numberline {7.3}Correlation Class Reference}{8}{subsection.7.3}
+\contentsline {subsection}{\numberline {7.4}Data\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Series Class Reference}{8}{subsection.7.4}
+\contentsline {subsection}{\numberline {7.5}Dbscan Class Reference}{9}{subsection.7.5}
+\contentsline {subsubsection}{\numberline {7.5.1}Detailed Description}{9}{subsubsection.7.5.1}
+\contentsline {subsubsection}{\numberline {7.5.2}Constructor \& Destructor Documentation}{9}{subsubsection.7.5.2}
+\contentsline {paragraph}{\numberline {7.5.2.1}Dbscan()}{9}{paragraph.7.5.2.1}
+\contentsline {subsubsection}{\numberline {7.5.3}Member Function Documentation}{10}{subsubsection.7.5.3}
+\contentsline {paragraph}{\numberline {7.5.3.1}Expand\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Cluster()}{10}{paragraph.7.5.3.1}
+\contentsline {paragraph}{\numberline {7.5.3.2}Region\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Query()}{10}{paragraph.7.5.3.2}
+\contentsline {paragraph}{\numberline {7.5.3.3}Run()}{10}{paragraph.7.5.3.3}
+\contentsline {subsection}{\numberline {7.6}Empty$<$ T $>$ Class Template Reference}{11}{subsection.7.6}
+\contentsline {subsection}{\numberline {7.7}Generic\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Vector Class Reference}{11}{subsection.7.7}
+\contentsline {subsubsection}{\numberline {7.7.1}Detailed Description}{12}{subsubsection.7.7.1}
+\contentsline {subsection}{\numberline {7.8}Highchart Class Reference}{12}{subsection.7.8}
+\contentsline {subsection}{\numberline {7.9}I\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Charts\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}List Interface Reference}{12}{subsection.7.9}
+\contentsline {subsection}{\numberline {7.10}I\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Tmpl\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Model Interface Reference}{12}{subsection.7.10}
+\contentsline {subsection}{\numberline {7.11}I\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Tree$<$ T $>$ Interface Template Reference}{13}{subsection.7.11}
+\contentsline {subsection}{\numberline {7.12}Kd\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Tree$<$ T $>$ Class Template Reference}{13}{subsection.7.12}
+\contentsline {subsection}{\numberline {7.13}Kmeans Class Reference}{13}{subsection.7.13}
+\contentsline {subsubsection}{\numberline {7.13.1}Detailed Description}{14}{subsubsection.7.13.1}
+\contentsline {subsubsection}{\numberline {7.13.2}Constructor \& Destructor Documentation}{14}{subsubsection.7.13.2}
+\contentsline {paragraph}{\numberline {7.13.2.1}Kmeans()}{14}{paragraph.7.13.2.1}
+\contentsline {subsubsection}{\numberline {7.13.3}Member Function Documentation}{15}{subsubsection.7.13.3}
+\contentsline {paragraph}{\numberline {7.13.3.1}Generate\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Random\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Centroids()}{15}{paragraph.7.13.3.1}
+\contentsline {paragraph}{\numberline {7.13.3.2}Get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Nearest\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Cluster()}{15}{paragraph.7.13.3.2}
+\contentsline {paragraph}{\numberline {7.13.3.3}Get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Random\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Vector()}{15}{paragraph.7.13.3.3}
+\contentsline {paragraph}{\numberline {7.13.3.4}Is\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Changed\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Cluster()}{16}{paragraph.7.13.3.4}
+\contentsline {paragraph}{\numberline {7.13.3.5}Recalculate\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Centroids()}{16}{paragraph.7.13.3.5}
+\contentsline {paragraph}{\numberline {7.13.3.6}Recalculate\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Clusters()}{16}{paragraph.7.13.3.6}
+\contentsline {paragraph}{\numberline {7.13.3.7}Run()}{16}{paragraph.7.13.3.7}
+\contentsline {subsection}{\numberline {7.14}Knearest\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Classification Class Reference}{16}{subsection.7.14}
+\contentsline {subsubsection}{\numberline {7.14.1}Detailed Description}{17}{subsubsection.7.14.1}
+\contentsline {subsubsection}{\numberline {7.14.2}Constructor \& Destructor Documentation}{17}{subsubsection.7.14.2}
+\contentsline {paragraph}{\numberline {7.14.2.1}Knearest\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Classification()}{17}{paragraph.7.14.2.1}
+\contentsline {subsubsection}{\numberline {7.14.3}Member Function Documentation}{17}{subsubsection.7.14.3}
+\contentsline {paragraph}{\numberline {7.14.3.1}Classify\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Point()}{17}{paragraph.7.14.3.1}
+\contentsline {paragraph}{\numberline {7.14.3.2}Get\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Biggest\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Cluster()}{18}{paragraph.7.14.3.2}
+\contentsline {subsection}{\numberline {7.15}Linear\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Regression Class Reference}{18}{subsection.7.15}
+\contentsline {subsection}{\numberline {7.16}Matrix\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Utils Class Reference}{19}{subsection.7.16}
+\contentsline {subsubsection}{\numberline {7.16.1}Detailed Description}{19}{subsubsection.7.16.1}
+\contentsline {subsection}{\numberline {7.17}Pearson\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Correlation Class Reference}{19}{subsection.7.17}
+\contentsline {subsection}{\numberline {7.18}Polynomial\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Regression Class Reference}{20}{subsection.7.18}
+\contentsline {subsection}{\numberline {7.19}Priority\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Que$<$ T $>$ Class Template Reference}{20}{subsection.7.19}
+\contentsline {subsection}{\numberline {7.20}Que\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Item$<$ T $>$ Class Template Reference}{21}{subsection.7.20}
+\contentsline {subsection}{\numberline {7.21}Replacer Class Reference}{21}{subsection.7.21}
+\contentsline {subsection}{\numberline {7.22}Resources Class Reference}{21}{subsection.7.22}
+\contentsline {subsubsection}{\numberline {7.22.1}Detailed Description}{22}{subsubsection.7.22.1}
+\contentsline {subsection}{\numberline {7.23}Spearman\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Correlation Class Reference}{22}{subsection.7.23}
+\contentsline {subsection}{\numberline {7.24}Tmpl\discretionary {\unhbox \voidb@x \hbox {\relax \fontsize {7}{8}\selectfont $\leftarrow \joinrel \rhook $}}{}{}Engine Class Reference}{22}{subsection.7.24}
+\contentsline {subsection}{\numberline {7.25}Utils Class Reference}{23}{subsection.7.25}
+\contentsline {subsection}{\numberline {7.26}Vector2 Class Reference}{23}{subsection.7.26}
+\contentsline {subsubsection}{\numberline {7.26.1}Detailed Description}{23}{subsubsection.7.26.1}
+\contentsline {section}{Index}{25}{section*.95}

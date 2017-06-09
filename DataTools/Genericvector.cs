@@ -2,8 +2,18 @@ using System;
 using System.Linq;
 
 namespace DataTools
-
 {
+    
+    /*! \brief N dimensional vector
+     *
+     *  This class is a vector with N dimensions. The 
+     *  amount of dimensions is created upon initialization
+     *  and can not be changed afterwards. It implements
+     *  some basic vector algebra like summation, 
+     *  multiplication and deviding.
+     *
+     */
+    
     public class GenericVector
     {
         private readonly double[] _points;

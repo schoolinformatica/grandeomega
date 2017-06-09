@@ -1,13 +1,13 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
-using System.Collections.Generic;
 
-namespace YamlParser
+namespace webapp.wwwroot.scripts
 {
-    public class Parser
+    public static class Parser
     {
-        public List<Dictionary<string, string>> Parse(string path)
+        public static List<Dictionary<string, string>> Parse(string path)
         {
             var data = new List<Dictionary<string, string>>();
 

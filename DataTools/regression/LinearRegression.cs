@@ -4,6 +4,16 @@ using System.Linq;
 
 namespace DataTools.regression
 {
+    /******************************************************
+     *
+     * Linear Regression models the relationship between a 
+     * dependent variable Y and a more independent variable
+     * X. The regression line is represented by the formula
+     * y = m * x + b, where m the slope and b the 
+     * Y-intercept.
+     *
+     ******************************************************/
+    
     public class LinearRegression
     {
         private readonly IEnumerable<Vector2> _data;

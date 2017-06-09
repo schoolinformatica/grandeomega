@@ -1,0 +1,25 @@
+\hypertarget{classDataTools_1_1classification_1_1KnearestClassification}{}\subsection{Knearest\+Classification Class Reference}
+\label{classDataTools_1_1classification_1_1KnearestClassification}\index{Knearest\+Classification@{Knearest\+Classification}}
+
+
+Classification algorithm using K Nearest.  
+
+
+\subsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDataTools_1_1classification_1_1KnearestClassification_a588873a311daa525f0bdf6663b1d5eef}\label{classDataTools_1_1classification_1_1KnearestClassification_a588873a311daa525f0bdf6663b1d5eef}} 
+{\bfseries Knearest\+Classification} (Dictionary$<$ int, I\+Enumerable$<$ \hyperlink{classDataTools_1_1GenericVector}{Generic\+Vector} $>$$>$ trainging\+Data, int k)
+\item 
+\mbox{\Hypertarget{classDataTools_1_1classification_1_1KnearestClassification_a1c75b6bb19251c5c39a7bfe67a1a2b1f}\label{classDataTools_1_1classification_1_1KnearestClassification_a1c75b6bb19251c5c39a7bfe67a1a2b1f}} 
+int {\bfseries Classify\+Point} (\hyperlink{classDataTools_1_1GenericVector}{Generic\+Vector} point)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Detailed Description}
+Classification algorithm using K Nearest. 
+
+K Nearest is a classification algorithm that uses a training set in order te classify new points. To do so, K Nearest computes the distance from the new point to all the points in the training set. With a time complexity of {\ttfamily O(m$\ast$n)} where {\ttfamily n} is the length of the training set and {\ttfamily m} is the length of the set of new points, this a C\+PU heavy operation.
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000001}{Todo}]In order de reduce the time complexity, a KD Tree could be implemented. Searching a KD Tree for nearest neighbours has a time complexity of {\ttfamily O(log n)} \end{DoxyRefDesc}

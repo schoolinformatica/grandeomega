@@ -1,14 +1,15 @@
 namespace DataTools.clustering
 {
-    public class ClusterPoint
+    
+    internal class ClusterPoint
     {
-        public bool Visited { get; set; }
-        public bool Noise { get; set; }
-        public GenericVector Vector { get; }
+        internal bool Visited { get; set; }
+        internal bool Noise { get; set; }
+        internal GenericVector Vector { get; }
 
-        public int Cluster { get; set; }
-
-        public ClusterPoint(GenericVector vector, int cluster = -1)
+        internal int Cluster { get; set; }
+          
+        internal ClusterPoint(GenericVector vector, int cluster = -1)
         {
             Vector = vector;
             Cluster = cluster;
