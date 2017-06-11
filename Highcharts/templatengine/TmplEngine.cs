@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Reflection;
-using System.Text;
-using Highcharts.templatengine;
+﻿using System.IO;
 
-namespace Highcharts
+namespace Highcharts.templatengine
 {
     public static class TmplEngine
     {

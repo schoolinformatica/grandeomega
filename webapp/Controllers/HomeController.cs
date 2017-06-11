@@ -22,13 +22,13 @@ namespace WebApplication.Controllers
 
         [HttpPost]
         public string CreateGraph(Stud dataA, Stud dataB, bool kmeans, bool dbscan, bool linearregression,
-            bool polynomialregression, bool pearsoncorrelation, bool spearmancorrelation, bool classifyungraded)
+            bool polynomialregression, bool pearsoncorrelation, bool spearmancorrelation, bool knearest, bool naivebayes)
         {
             var gradedStudents = Students.StudentsGraded;
+            var classifyungraded = knearest || naivebayes;
             
             if (classifyungraded)
             {
-                Console.WriteLine($"students graded {gradedStudents.Count}");
                 var grades = new Dictionary<int, double>();
                 var clusters = new Dbscan(210, 3,
                     Students.StudentsGraded.Select(x => x.ToGenericVector(Stud.Attempts, Stud.Class, Stud.FailRatio,
@@ -37,10 +37,12 @@ namespace WebApplication.Controllers
                 foreach (var cluster in clusters.DataClusters)
                 {
                     grades[cluster.Key] = cluster.Value.Sum(x => x[6]) / cluster.Value.Count();
-                    Console.WriteLine($"Average grade: {grades[cluster.Key]}");
                 }
+                Classification classification = new NaiveBayesClassification(clusters.DataClusters, 50000);
+                if (knearest)
+                    classification = new KnearestClassification(clusters.DataClusters, 5);
 
-                var classification = new NaiveBayesClassification(clusters.DataClusters, 50000);
+
                 foreach (var student in Students.StudentsUngraded)
                 {
                     var cluster = classification.ClassifyPoint(student.ToGenericVector(Stud.Attempts, Stud.Class,
@@ -50,6 +52,13 @@ namespace WebApplication.Controllers
                     gradedStudents.Add(student);
                 }
             }
+            
+            var list = new List<int>();
+            var a = list
+                .GroupBy(x => x)
+                .Select(x => x.OrderBy(y => y))
+                .Select(x => x.First());
+           
             
             foreach (var student in gradedStudents)
             {

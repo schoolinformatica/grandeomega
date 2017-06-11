@@ -51,6 +51,9 @@
                 <li>
                     <label><input id="knearest" type="checkbox"> Knearest Classification</label>
                 </li>
+                <li>
+                    <label><input id="naivebayes" type="checkbox"> Naive Bayes Classification</label>
+                </li>
 
             </ul>
         </div>
@@ -74,6 +77,7 @@
             var pearsoncorrelation = $("#pearsoncorr").is(':checked');
             var spearmancorrelation = $("#spearmancorr").is(':checked');
             var knearest = $("#knearest").is(':checked');
+            var naivebayes = $("#naivebayes").is(':checked');
             $.ajax({
                 type: "POST",
                 url: "/Home/CreateGraph",
@@ -86,7 +90,8 @@
                     polynomialregression: polynomialregression,
                     pearsoncorrelation: pearsoncorrelation,
                     spearmancorrelation: spearmancorrelation,
-                    classifyungraded: knearest
+                    knearest: knearest,
+                    naivebayes: naivebayes
                 },
                 dataType: 'text',
                 error: function(XMLHttpRequest, textStatus, errorThrown) {
